@@ -1,0 +1,29 @@
+{
+  "name": "rescuerailroad",
+  "version": "1.0.0",
+  "description": "Web application for animal shelters to connect with volunteer drivers in order to transport dogs and cats from high-risk shelters to animal rescue groups. Built on the MEAN stack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marybethsnodgrass/rescuerailroad.git"
+  },
+  "author": "Marybeth Snodgrass (https://marybethsnodgrass.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marybethsnodgrass/rescuerailroad/issues"
+  },
+  "homepage": "https://github.com/marybethsnodgrass/rescuerailroad#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "lodash": "^4.6.1",
+    "method-override": "^2.3.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.1"
+  }
+}
