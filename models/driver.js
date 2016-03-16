@@ -2,12 +2,15 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Driver', {
-    DriverID: {
+    driverID: {
       type: DataTypes.INTEGER,
       primaryKey: true,
+      field: 'driver_id',
       autoIncrement: true
     },
-    Name: DataTypes.STRING
+    firstName: DataTypes.STRING, 
+    lastName: DataTypes.STRING, 
+    email: DataTypes.STRING, 
   }, {
     tableName: 'Drivers',
     timestamps: false,

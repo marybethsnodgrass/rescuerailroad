@@ -2,12 +2,12 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Group', {
-    GroupID: {
+    groupID: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    Name: DataTypes.STRING
+    mainusername: DataTypes.STRING
   }, {
     tableName: 'Groups',
     timestamps: false,
