@@ -1,0 +1,24 @@
+{
+  "name": "rescueRR",
+  "homepage": "https://github.com/marybethsnodgrass/rescuerailroad",
+  "authors": [
+    "Marybeth Snodgrass <msnodgrass25@gmail.com>"
+  ],
+  "description": "Web application for animal shelters to connect with volunteer drivers in order to transport dogs and cats from high-risk shelters to animal rescue groups. Built on the MEAN stack.",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "angular": "^1.5.1",
+    "angular-route": "^1.5.1"
+  }
+}

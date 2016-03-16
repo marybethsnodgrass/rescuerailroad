@@ -11,7 +11,9 @@ const driver = require('./routes/driver');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.set('view engine', 'jade');
+app.set('view engine', 'html');
+
+app.use(express.static('public'))
 
 app.use(bodyParser.urlencoded({
   extended: false
