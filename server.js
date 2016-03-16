@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const methodOverride = require('method-override');
 
+const models = require('./models/');
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -22,3 +24,12 @@ app.get('/', (req, res) => {
 // routes
 app.use(group);
 app.use(driver);
+
+app.get('/groups', (req, res) => {
+  models.Group.findAll()
+    .then(groups => res.send(groups));
+});
+
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+});
