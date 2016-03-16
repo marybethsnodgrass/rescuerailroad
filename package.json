@@ -2,7 +2,7 @@
   "name": "rescuerailroad",
   "version": "1.0.0",
   "description": "Web application for animal shelters to connect with volunteer drivers in order to transport dogs and cats from high-risk shelters to animal rescue groups. Built on the MEAN stack.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
