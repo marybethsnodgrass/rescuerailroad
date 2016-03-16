@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     Name: DataTypes.STRING
   }, {
-    tableName: 'Group',
+    tableName: 'Groups',
     timestamps: false,
     classMethods: {
       associate: function(models) {
