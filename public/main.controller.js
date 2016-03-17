@@ -1,3 +1,3 @@
-app.controller('mainCtrl', function ($scope, $timeout, $location) {
+app.controller('mainCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
     console.log("mainCtrl");
-});
+}]);

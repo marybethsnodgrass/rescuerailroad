@@ -1,13 +1,11 @@
 'use strict';
 
 const app = angular.module('rescueRRApp', [
-  'rescueRRApp.register',
-  'ui.router',
   'ngRoute',
-  'ui.bootstrap'
-])
-app.config(function($urlRouterProvider, $locationProvider) {
-    $urlRouterProvider
+]);
+
+app.config(["$routeProvider", function($routeProvider) {
+    $routeProvider
     .when('/driver', {
         templateUrl: 'register/register.html',
         controller: 'registerCtrl'
@@ -16,8 +14,6 @@ app.config(function($urlRouterProvider, $locationProvider) {
         templateUrl: 'register/register.html',
         controller: 'registerCtrl'
       })
-
-    $locationProvider.html5Mode(true);
-  });
+}]);
 
 

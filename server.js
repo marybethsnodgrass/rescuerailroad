@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const models = require('./models/');
 const group = require('./routes/group');
 const driver = require('./routes/driver');
+const animal = require('./routes/animal');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -28,11 +29,7 @@ app.get('/', (req, res) => {
 // routes
 app.use(group);
 app.use(driver);
-
-// app.get('/groups', (req, res) => {
-//   models.Group.findAll()
-//     .then(groups => res.send(groups));
-// });
+app.use(animal);
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);

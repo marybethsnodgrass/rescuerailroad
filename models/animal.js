@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Driver', {
-    DriverID: {
+  return sequelize.define('Animal', {
+    animalRouteID: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    email: DataTypes.STRING
+    shelterID: DataTypes.INTEGER
   }, {
     tableName: 'Drivers',
     timestamps: false,
