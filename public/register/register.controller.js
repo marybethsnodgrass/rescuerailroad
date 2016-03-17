@@ -1,5 +1,6 @@
 
   app.controller('registerCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
+    console.log("run");
     const form = document.querySelector('form')
     $scope.firstname = document.querySelector('input[id="firstname"]');
     $scope.lastname = document.querySelector('input[id="lastname"]');

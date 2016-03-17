@@ -12,7 +12,7 @@ const animal = require('./routes/animal');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.set('view engine', 'html');
+// app.set('view engine', 'html');
 
 app.use(express.static('public'))
 
@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
   res.send('Server Running');
 });
 
-// routes
+//routes
 app.use(group);
 app.use(driver);
 app.use(animal);

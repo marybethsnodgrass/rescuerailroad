@@ -22,7 +22,7 @@ module.exports = {
                 id: req.params.animalRouteID
             }
         }).then ((animal) => {
-        res.render('show-animalRoute', {animal: req.animal});
+        res.send({animal: req.animal});
         });
     },
 
