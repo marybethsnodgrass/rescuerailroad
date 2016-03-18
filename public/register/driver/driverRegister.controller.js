@@ -1,20 +1,29 @@
 
   app.controller('driverRegisterCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
     const form = document.querySelector('form')
-    $scope.firstname = document.querySelector('input[id="firstname"]');
-    $scope.lastname = document.querySelector('input[id="lastname"]');
+    $scope.firstname = document.querySelector('input[name="firstname"]');
+    $scope.lastname = document.querySelector('input[name="lastname"]');
+    $scope.email = document.querySelector('input[name="email"]');
+    $scope.phone = document.querySelector('input[name="phone"]');
+    $scope.address = document.querySelector('input[name="address"]');
+    $scope.city = document.querySelector('input[name="city"]');
+    $scope.state = document.querySelector('input[name="lastname"]');
+    $scope.zip = document.querySelector('input[name="zip"]');
+    $scope.dlState = document.querySelector('input[name="dlState"]');
+    $scope.dlNum = document.querySelector('input[name="dlNum"]');
+    $scope.sponsorID = document.querySelector('input[name="sponsorID"]');
     $scope.drivers = [];
     $scope.newDriver = '';
     $scope.editedDriver = null;
 
     form.addEventListener('submit', () => {
-    const [first, last] = [firstname.value, lastname.value]
+   // const [first, last] = [firstname.value, lastname.value]
     });
  
     // create a new driver locally save it remotely
     $scope.createDriver = function () {
-      const todoTitle = $scope.newDriver
-      if (!todoTitle.length) {
+      const driverCheck = $scope.newDriver
+      if (!driverCheck.length) {
         return;
       }
       const newDriver = new Driver({

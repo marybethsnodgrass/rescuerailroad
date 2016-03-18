@@ -13,7 +13,7 @@ const Driver = sequelize.define('Driver', {
 });
 
 sequelize.sync().then(() => {
-  console.log("seqeualize.sync()");
+  console.log("seqeulize.sync()");
 }).then(() => {
   console.log(".then");
 });

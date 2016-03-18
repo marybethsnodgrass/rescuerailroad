@@ -1,7 +1,5 @@
 'use strict';
 
-const Driver = require('../models/driver');
-const Group = require('../models/group');
 const Animal = require('../models/animal');
 
 module.exports = {

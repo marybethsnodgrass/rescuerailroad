@@ -2,13 +2,35 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Group', {
-    groupID: {
+    _id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    mainusername: DataTypes.STRING
-  }, {
+    email:{
+        type: DataTypes.STRING, 
+        isEmail: true ,
+        notNull: true
+    },
+    phone: {
+        type: DataTypes.STRING(10),
+        notNull: true
+    },
+    address: {
+       type: DataTypes.STRING,   
+    },
+    city: {
+       type: DataTypes.STRING,   
+       notNull: true
+    },
+    state: {
+       type: DataTypes.STRING(2),   
+       notNull: true
+    },
+    zip: {
+       type: DataTypes.STRING(5),   
+       notNull: true
+    },
     tableName: 'Groups',
     timestamps: false,
     classMethods: {

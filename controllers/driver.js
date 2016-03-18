@@ -1,13 +1,22 @@
 'use strict';
 
 const Driver = require('../models/driver');
-const Group = require('../models/group');
 
 module.exports = {
 
     create (req, res) {
         Driver.create({
-            email: req.body.email
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            phone: req.body.phone,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            zip: req.body.zip,
+            dlState: req.body.dlState,
+            dlNum: req.body.dlNum,
+            sponsorID: req.body.sponsorID
         }).then ((driver) => {
         res.json(driver);
         res.redirect(`/create/${driver.driverid}`);
