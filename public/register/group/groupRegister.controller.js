@@ -1,30 +1,29 @@
 
-  app.controller('registerCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
-    console.log("run");
+  app.controller('driverRegisterCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
     const form = document.querySelector('form')
     $scope.firstname = document.querySelector('input[id="firstname"]');
     $scope.lastname = document.querySelector('input[id="lastname"]');
-    $scope.drivers = [];
-    $scope.newDriver = '';
-    $scope.editedDriver = null;
+    $scope.groups = [];
+    $scope.newGroup = '';
+    $scope.editedGroup = null;
 
     form.addEventListener('submit', () => {
-    const [first, last] = [firstname.value, lastname.value]
+    const [groupname] = [groupname.value]
     });
  
     // create a new driver locally save it remotely
-    $scope.createDriver = function () {
-      const todoTitle = $scope.newDriver
+    $scope.createGroup = function () {
+      const todoTitle = $scope.newGroup
       if (!todoTitle.length) {
         return;
       }
-      const newDriver = new Driver({
+      const newGroup = new Group({
         title: driverID,
         completed: false
       });
-      newDriver.$save();
-      $scope.drivers.unshift(newDriver);
-      $scope.newDriver = '';
+      newGroup.$save();
+      $scope.groups.unshift(newGroup);
+      $scope.newGroup = '';
     };
  
     // when the controller is destroyed, cancel the polling

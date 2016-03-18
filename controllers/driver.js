@@ -15,7 +15,7 @@ module.exports = {
     },
 
     show (req, res) {
-        res.render('show-drivers', {driver: req.driver});
+        res.json({driver: req.driver});
     },
 
     showAll (req, res) {

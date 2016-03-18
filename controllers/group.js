@@ -15,7 +15,7 @@ module.exports = {
     },
 
     show (req, res) {
-        res.render('show-groups', {group: req.group});
+        res.json({group: req.group});
     },
 
     showAll (req, res) {

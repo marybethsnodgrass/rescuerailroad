@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Rescue Railroad</title>
+    <link rel="stylesheet" type="text/css" href="styles/css/main.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body ng-app="rescueRRApp">
     <div ng-view> </div>
@@ -9,9 +11,13 @@
 </body>
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 <script src="/main.js"></script>
 <script src="/main.controller.js"></script>
-<script src="/register/register.controller.js"></script>
+<script src="/register/driver/driverRegister.controller.js"></script>
+<script src="/register/group/groupRegister.controller.js"></script>
+<script src="/directives/navbar.js"></script>
 </html>

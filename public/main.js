@@ -7,12 +7,16 @@ const app = angular.module('rescueRRApp', [
 app.config(["$routeProvider", function($routeProvider) {
     $routeProvider
     .when('/driverRegister', {
-        templateUrl: 'register/register.html',
-        controller: 'registerCtrl'
+        templateUrl: 'register/driver/driverRegister.html',
+        controller: 'driverRegisterCtrl'
+      })
+    .when('/groupRegister', {
+        templateUrl: 'register/group/groupRegister.html',
+        controller: 'groupRegisterCtrl'
       })
       .otherwise({
-        templateUrl: 'register/register.html',
-        controller: 'registerCtrl'
+        templateUrl: 'register/driver/driverRegister.html',
+        controller: 'driverRegisterCtrl'
       })
 }]);
 
