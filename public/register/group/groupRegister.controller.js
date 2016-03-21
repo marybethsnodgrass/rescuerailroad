@@ -23,8 +23,13 @@
         return;
       }
       const newGroup = new Group({
-        title: driverID,
-        completed: false
+        groupname: $scope.groupname,
+        email: $scope.email,
+        phone: $scope.phone,
+        address: $scope.address,
+        city: $scope.city,
+        state: $scope.state,
+        zip: $scope.zip
       });
       newGroup.$save();
       $scope.groups.unshift(newGroup);

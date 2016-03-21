@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const methodOverride = require('method-override');
 
-const models = require('./models/');
 const group = require('./routes/group');
 const driver = require('./routes/driver');
 const animal = require('./routes/animal');

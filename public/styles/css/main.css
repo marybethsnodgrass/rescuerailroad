@@ -22,5 +22,7 @@ body {
 
   .navbar-fixed-top .navbar-brand {
     padding: 15px 0; } }
+input {
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */

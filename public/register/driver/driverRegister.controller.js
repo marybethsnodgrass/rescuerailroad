@@ -26,9 +26,20 @@
         return;
       }
       const newDriver = new Driver({
-        title: driverID,
-        completed: false
+        firstname: $scope.firstname,
+        lastname: $scope.lastname,
+        email: $scope.email,
+        phone: $scope.phone,
+        address: $scope.address,
+        city: $scope.city,
+        state: $scope.state,
+        zip: $scope.zip,
+        dlState: $scope.dlState,
+        dlNum: $scope.dlNum,
+        sponsorID: $scope.sponsorID
       });
+      console.log("went through creating new driver");
+      //the console.log above is not working currently
       newDriver.$save();
       $scope.drivers.unshift(newDriver);
       $scope.newDriver = '';

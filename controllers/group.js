@@ -12,7 +12,7 @@ module.exports = {
             address: req.body.address,
             city: req.body.city,
             state: req.body.state,
-            zip: req.body.zip:
+            zip: req.body.zip
         }).then (function(group) {
         res.json(group);
         res.redirect(`/create/${group.groupID}`);

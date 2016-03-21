@@ -1,5 +1,6 @@
 <div class="container" ng-controller="driverRegisterCtrl">
 <navbar-directive></navbar-directive> 
+<h1>Driver Register</h1>
 <form>
     <input type="text" name="firstname" placeholder="First Name">
     <input type="text" name="lastname" placeholder="Last Name">
@@ -12,6 +13,6 @@
     <input type="text" name="dlState" placeholder="Drivers License State">
     <input type="text" name="dlNum" placeholder="Drivers License Number">
     <input type="text" name="sponsorID" placeholder="Sponsor Shelter/Rescue Group ID">
-    <input type="submit">
+    <input type="submit" ng-click="createDriver()">
 </form>
 </div>
