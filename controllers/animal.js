@@ -1,11 +1,11 @@
 'use strict';
 
-const Animal = require('../models/animal');
+const db = require('../models/');
 
 module.exports = {
 
     create (req, res) {
-        Animal.create({
+        db.animal.create({
             shelterID: req.body.shelterID,
             destination: req.body.destination
         }).then ((animal) => {
@@ -25,7 +25,7 @@ module.exports = {
     },
 
     showAll (req, res) {
-        Animal.showAll({})
+        db.animal.showAll({})
         .then((animal) => {
         res.json(animal)
         });

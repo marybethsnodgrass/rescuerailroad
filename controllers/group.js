@@ -1,11 +1,11 @@
 'use strict';
 
-const Group = require('../models/group');
+const db = require('../models/');
 
 module.exports = {
 
     create (req, res) {
-        Group.create({
+        db.group.create({
             groupname: req.body.groupname,
             email: req.body.email,
             phone: req.body.phone,
@@ -24,7 +24,7 @@ module.exports = {
     },
 
     showAll (req, res) {
-        Group.showAll({})
+        db.group.showAll({})
         .then(function(group) {
         res.json(group)
         });

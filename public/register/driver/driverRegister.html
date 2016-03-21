@@ -2,17 +2,17 @@
 <navbar-directive></navbar-directive> 
 <h1>Driver Register</h1>
 <form>
-    <input type="text" name="firstname" placeholder="First Name">
-    <input type="text" name="lastname" placeholder="Last Name">
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="phone" placeholder="Phone">
-    <input type="text" name="address" placeholder="Address">
-    <input type="text" name="city" placeholder="City">
-    <input type="text" name="state" placeholder="State">
-    <input type="text" name="zip" placeholder="Zip">
-    <input type="text" name="dlState" placeholder="Drivers License State">
-    <input type="text" name="dlNum" placeholder="Drivers License Number">
-    <input type="text" name="sponsorID" placeholder="Sponsor Shelter/Rescue Group ID">
+    <input type="text" ng-model="firstname" name="firstname" placeholder="First Name">
+    <input type="text" ng-model="lastname" name="lastname" placeholder="Last Name">
+    <input type="text" ng-model="email" name="email" placeholder="Email">
+    <input type="text" ng-model="phone" name="phone" placeholder="Phone">
+    <input type="text" ng-model="address" name="address" placeholder="Address">
+    <input type="text" ng-model="city" name="city" placeholder="City">
+    <input type="text" ng-model="state" name="state" placeholder="State">
+    <input type="text" ng-model="zip" name="zip" placeholder="Zip">
+    <input type="text" ng-model="dlState" name="dlState" placeholder="Drivers License State">
+    <input type="text" ng-model="dlNum" name="dlNum" placeholder="Drivers License Number">
+    <input type="text" ng-model="sponsorID" name="sponsorID" placeholder="Sponsor Shelter/Rescue Group ID">
     <input type="submit" ng-click="createDriver()">
 </form>
 </div>

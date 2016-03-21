@@ -3,6 +3,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const methodOverride = require('method-override');
+const db = require('./models/');
 
 const group = require('./routes/group');
 const driver = require('./routes/driver');
@@ -13,9 +14,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static('public'))
 
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
+app.use(bodyParser.json());
 
 app.use(methodOverride('_method'));
 
@@ -27,6 +26,12 @@ app.get('/', (req, res) => {
 app.use(group);
 app.use(driver);
 app.use(animal);
+
+db.sequelize.sync().then(() => {
+  console.log("seqeulize.sync()");
+}).then(() => {
+  console.log(".then");
+});
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);

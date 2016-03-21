@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Group', {
+  return sequelize.define('group', {
     _id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
        type: DataTypes.STRING(5),   
        notNull: true
     },
-    tableName: 'Groups',
+}, {
     timestamps: false,
     classMethods: {
       associate: function(models) {

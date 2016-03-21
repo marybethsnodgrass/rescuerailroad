@@ -1,52 +1,43 @@
 
-  app.controller('driverRegisterCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
+  app.controller('driverRegisterCtrl', ["$scope", "$timeout", "$location", "$http", function ($scope, $timeout, $location, $http) {
     const form = document.querySelector('form')
-    $scope.firstname = document.querySelector('input[name="firstname"]');
-    $scope.lastname = document.querySelector('input[name="lastname"]');
-    $scope.email = document.querySelector('input[name="email"]');
-    $scope.phone = document.querySelector('input[name="phone"]');
-    $scope.address = document.querySelector('input[name="address"]');
-    $scope.city = document.querySelector('input[name="city"]');
-    $scope.state = document.querySelector('input[name="lastname"]');
-    $scope.zip = document.querySelector('input[name="zip"]');
-    $scope.dlState = document.querySelector('input[name="dlState"]');
-    $scope.dlNum = document.querySelector('input[name="dlNum"]');
-    $scope.sponsorID = document.querySelector('input[name="sponsorID"]');
-    $scope.drivers = [];
-    $scope.newDriver = '';
-    $scope.editedDriver = null;
-
-    form.addEventListener('submit', () => {
-    });
+    $scope.firstname = '';
+    $scope.lastname = '';
+    $scope.email = '';
+    $scope.phone = '';
+    $scope.address = '';
+    $scope.city = '';
+    $scope.state = '';
+    $scope.zip = '';
+    $scope.dlState = '';
+    $scope.dlNum = '';
+    $scope.sponsorID = '';
+    let newDriver = {};
  
     // create a new driver locally save it remotely
     $scope.createDriver = function () {
-      const driverCheck = $scope.newDriver
-      if (!driverCheck.length) {
-        return;
-      }
-      const newDriver = new Driver({
-        firstname: $scope.firstname,
-        lastname: $scope.lastname,
-        email: $scope.email,
-        phone: $scope.phone,
-        address: $scope.address,
-        city: $scope.city,
-        state: $scope.state,
-        zip: $scope.zip,
-        dlState: $scope.dlState,
-        dlNum: $scope.dlNum,
-        sponsorID: $scope.sponsorID
-      });
-      console.log("went through creating new driver");
-      //the console.log above is not working currently
-      newDriver.$save();
-      $scope.drivers.unshift(newDriver);
-      $scope.newDriver = '';
+        newDriver = {
+            firstname: $scope.firstname,
+            lastname: $scope.lastname,
+            email: $scope.email,
+            phone: $scope.phone,
+            address: $scope.address,
+            city: $scope.city,
+            state: $scope.state,
+            zip: $scope.zip,
+            dlState: $scope.dlState,
+            dlNum: $scope.dlNum,
+            sponsorID: $scope.sponsorID
+        };
+        console.log("went through creating new driver");
+        //the console.log above is not working currently
+        $http.post('/driver', JSON.stringify(newDriver)).
+            then( function successCallback(response, data) {
+            // $location.path('/driver/{newDriver._id');
+        }),  function errorCallback(response) {
+            console.log("there was an error")
+        }
+        $scope.newDriver = {};
     };
- 
-    // when the controller is destroyed, cancel the polling
-    $scope.$on('destroy', function(){
-      $timeout.cancel($scope.promise);
-    });
+
 }]);

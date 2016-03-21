@@ -1,11 +1,12 @@
 'use strict';
 
-const Driver = require('../models/driver');
+const db = require('../models/');
 
 module.exports = {
 
     create (req, res) {
-        Driver.create({
+        console.log("req.body,", req.body);
+        db.driver.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
@@ -18,7 +19,6 @@ module.exports = {
             dlNum: req.body.dlNum,
             sponsorID: req.body.sponsorID
         }).then ((driver) => {
-        res.json(driver);
         res.redirect(`/create/${driver.driverid}`);
         });
     },
@@ -28,7 +28,7 @@ module.exports = {
     },
 
     showAll (req, res) {
-        Driver.showAll({})
+        db.driver.showAll({})
         .then((driver)=>{
         res.json(driver)
         });
