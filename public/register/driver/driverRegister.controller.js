@@ -17,7 +17,6 @@
     $scope.editedDriver = null;
 
     form.addEventListener('submit', () => {
-   // const [first, last] = [firstname.value, lastname.value]
     });
  
     // create a new driver locally save it remotely
