@@ -15,12 +15,16 @@ app.config(["$routeProvider", function($routeProvider) {
         controller: 'groupRegisterCtrl'
       })
     .when('/about', {
-        templateUrl: 'about/about.html',
+        templateUrl: 'viewsWithoutControllers/about.html',
+        controller: 'mainCtrl'
+      })
+    .when('/home', {
+        templateUrl: 'viewsWithoutControllers/home.html',
         controller: 'mainCtrl'
       })
       .otherwise({
-        templateUrl: 'register/driver/driverRegister.html',
-        controller: 'driverRegisterCtrl'
+        templateUrl: 'viewsWithoutControllers/home.html',
+        controller: 'mainCtrl'
       })
 }]);
 
