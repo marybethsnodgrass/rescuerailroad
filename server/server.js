@@ -3,6 +3,11 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const methodOverride = require('method-override');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
+const RedisStore = require('connect-redis')(session);
+
 const db = require('./models/');
 
 const group = require('./routes/group');

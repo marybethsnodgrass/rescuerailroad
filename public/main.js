@@ -6,6 +6,10 @@ const app = angular.module('rescueRRApp', [
 
 app.config(["$routeProvider", function($routeProvider) {
     $routeProvider
+    .when('/register', {
+        templateUrl: 'mainCtrlViews/userType.html',
+        controller: 'mainCtrl'
+      })
     .when('/driverRegister', {
         templateUrl: 'register/driver/driverRegister.html',
         controller: 'driverRegisterCtrl'
@@ -15,15 +19,15 @@ app.config(["$routeProvider", function($routeProvider) {
         controller: 'groupRegisterCtrl'
       })
     .when('/about', {
-        templateUrl: 'viewsWithoutControllers/about.html',
+        templateUrl: 'mainCtrlViews/about.html',
         controller: 'mainCtrl'
       })
     .when('/home', {
-        templateUrl: 'viewsWithoutControllers/home.html',
+        templateUrl: 'mainCtrlViews/home.html',
         controller: 'mainCtrl'
       })
       .otherwise({
-        templateUrl: 'viewsWithoutControllers/home.html',
+        templateUrl: 'mainCtrlViews/home.html',
         controller: 'mainCtrl'
       })
 }]);

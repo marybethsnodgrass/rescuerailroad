@@ -22,7 +22,17 @@ body {
 
   .navbar-fixed-top .navbar-brand {
     padding: 15px 0; } }
-input {
+label {
+  padding-left: 15px;
+  text-indent: -15px; }
+
+.inputGroupLabel {
   display: block; }
+
+input[type="text"] {
+  display: block; }
+
+input[type="radio"] {
+  display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */

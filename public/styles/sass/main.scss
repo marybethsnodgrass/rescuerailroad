@@ -1,5 +1,10 @@
 @import 'navbar';
+@import 'driverregister';
 
-input {
+input[type="text"]{
     display: block;
+}
+
+input[type="radio"] {
+    display: inline-block;
 }

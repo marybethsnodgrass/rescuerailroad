@@ -17,11 +17,16 @@
   },
   "homepage": "https://github.com/marybethsnodgrass/rescuerailroad#readme",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.15.0",
+    "connect-redis": "^3.0.2",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "jade": "^1.11.0",
     "lodash": "^4.6.1",
     "method-override": "^2.3.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "pg": "^4.5.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.19.3"

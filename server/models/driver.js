@@ -1,4 +1,7 @@
 'use strict';
+const bcrypt = require('bcrypt');
+
+const BCRYPT_DIFFICULTY = 11;
 
 module.exports = function(sequelize, DataTypes) {
 
@@ -48,6 +51,9 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,   
         },
         sponsorID: {
+            type: DataTypes.STRING,
+        },
+        password: {
             type: DataTypes.STRING,
         },
     }, {
