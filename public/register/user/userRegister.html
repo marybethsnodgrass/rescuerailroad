@@ -3,16 +3,16 @@
 <h1>User Registration</h1>
 <form>
     <span> I am a :
-    <input type="radio" group="userType" name="driver">Driver</input>
-    <input type="radio" group="userType" name="group">Group</input>
-    <input type="text" name="email" placeholder="Email">
-    <input type="text" name="phone" placeholder="Phone">
-    <input type="text" name="address" placeholder="Address">
-    <input type="text" name="city" placeholder="City">
-    <input type="text" name="state" placeholder="State">
-    <input type="text" name="zip" placeholder="Zip">
+    <input type="radio" ng-model="userType" group="userType" value="driver">Driver</input>
+    <input type="radio" ng-model="userType" group="userType" value="group">Group</input>
+    <input type="text" ng-model="email" name="email" placeholder="Email">
+    <input type="text" ng-model="phone" name="phone" placeholder="Phone">
+    <input type="text" ng-model="address" name="address" placeholder="Address">
+    <input type="text" ng-model="city" name="city" placeholder="City">
+    <input type="text" ng-model="state" name="state" placeholder="State">
+    <input type="text" ng-model="zip" name="zip" placeholder="Zip">
     <input type="text" ng-model="password" name="password" placeholder="Password">
     <input type="text" ng-model="verify" name="verify" placeholder="Verify Password">
-    <input type="submit">
+    <input type="submit" ng-click="createUser()">
 </form>
 </div>

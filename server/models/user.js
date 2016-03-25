@@ -17,6 +17,10 @@ module.exports = function(sequelize, DataTypes) {
             isEmail: true ,
             notNull: true
         },
+        userType:{
+            type: DataTypes.STRING, 
+            notNull: true
+        },
         phone: {
             type: DataTypes.STRING(10),
             notNull: true
@@ -43,7 +47,6 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         classMethods: {
             associate: function(models) {
-                // user.hasOne(models.group);
             }
         }
     });
