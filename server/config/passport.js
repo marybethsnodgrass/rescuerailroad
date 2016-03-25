@@ -2,41 +2,44 @@
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const db = require('../models/');
+db.sequelize.sync();
 
-const User = require('../models/user');
+// Using passport to authenticate the user
+passport.serializeUser(function(user, done) {
+    done(null, user.email);
+});
 
-module.exports = function(passport) {
+passport.deserializeUser(function(id, done) {
+    db.user.findOne({where: {email: id}}).then(function(user){
+        done(null, user);
+    }).catch(function(err){
+        done(err, null);
+    });
+});
 
-    passport.serializeUser(function(user, done) {
-      done(null, user._id);
-    }); // if you are using sessions
-
-    passport.deserializeUser(function(id, done) {
-      User.findById(id, function(err, user) {
-        done(err, user);
-      });
-    }); // if you are using sessions
-
-    passport.use('local-login', new LocalStrategy({
-      usernameField : 'email',
-      passwordField : 'password',
-      passReqToCallback : true
-   },
-   function(req, email, password, done) {
-     // mongodb example - you have to query for user, 
-     // check password, and return user if successful
-     User.findOne({ 'local.email' : email },
-     function(err, user) {
-       if (err) return done(err);
-
-       if (!user) return done(null, false);
-
-       if (!user.validPassword(password) {
-         return done(null, false);
-       }
-
-       else
-         return done(null, user); // all good return user
-     });
-   });
-};
+//Use local strategy to login user
+passport.use(new LocalStrategy({usernameField: 'email', passwordField: 'password'},
+    function(eMail, pw, done) {
+        db.user.findOne({ where: { email: eMail }})
+        .then(function(user) {
+            if (!user) {
+                return done(null, false, { message: 'Unknown user' });
+            } else {
+                user.authenticate(password, (err, valid) => {
+                    if (err) throw err;
+                    if (valid) {
+                        console.log("User Authenticated");
+                        return done(null, user);
+                    } else {
+                        return done();
+                    }
+                });
+                return done(null, user);
+            }
+        }).catch(function(err){
+            console.log("err", err);
+            return done(err);
+        });
+    };
+}));

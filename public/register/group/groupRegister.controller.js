@@ -1,6 +1,5 @@
 
   app.controller('groupRegisterCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
-    const form = document.querySelector('form')
     $scope.groupname = '';
     let newGroup = {};
 

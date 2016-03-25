@@ -1,6 +1,5 @@
 
   app.controller('driverRegisterCtrl', ["$scope", "$timeout", "$location", "$http", function ($scope, $timeout, $location, $http) {
-    const form = document.querySelector('form')
     $scope.firstname = '';
     $scope.lastname = '';
     $scope.dlState = '';

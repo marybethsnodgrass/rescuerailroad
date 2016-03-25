@@ -10,7 +10,8 @@ const ctrl = require('../controllers/user');
 const cb = 
 
 router
-.post('/user', ctrl.createUser)
-.post('/login', ctrl.loginUser)
+.post('/user/create', ctrl.createUser)
+.post('/user/login',passport.authenticate('local'), ctrl.loginUser)
+.get('/user', ctrl.myAccount)
 
 module.exports = router;

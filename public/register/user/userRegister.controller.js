@@ -24,9 +24,10 @@
             password: $scope.password,
             verify: $scope.verify
         };
-        $http.post('/user', JSON.stringify(newUser))
-            .then( function successCallback(response, data) {
-        }),  function errorCallback(response) {
+        $http.post('/user/create', JSON.stringify(newUser))
+            .then( function (response, data) {
+                $location.path('/home');
+        }),  function(response) {
             console.log("there was an error")
         }
         newUser = {};

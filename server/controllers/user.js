@@ -1,6 +1,6 @@
 'use strict';
-const bcrypt = require('bcrypt');
-const BCRYPT_DIFFICULTY = 11;
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 const db = require('../models/');
 
@@ -15,7 +15,7 @@ module.exports = {
                 city: req.body.city,
                 state: req.body.state,
                 zip: req.body.zip,
-                password: req.body.password}})
+                password: db.user.generateHashPass(req.body.password)}})
             .spread(function(user, created) {
                 res.json(user);
                 console.log(created);
@@ -25,25 +25,30 @@ module.exports = {
         }
     },
     loginUser (req, res) {
-        db.user.findOne({where: {email: req.body.email}}).then((user) => {
-            if (user) {
-                const hash = user.dataValues.password;
-                const pw = req.body.password;
-                bcrypt.compare(pw, hash, function(err, result) {
-                    if (err) throw err;
-                    if (result) {
-                        res.sendStatus(200);
-                        // send status message success
-                    } else {
-                        res.sendStatus(401);
-                        // throw error message that pw don't match
-                    }
-                });
-            } else {
-                res.sendStatus(400)
-                // throw error message that no username
-            }
+        db.user.findOne({where: {email: req.body.email}})
+        .then((user) => {
+            res.send(user);
+            // if (user) {
+            //     const hash = user.dataValues.password;
+            //     const pw = req.body.password;
+            //     bcrypt.compare(pw, hash, function(err, result) {
+            //         if (err) throw err;
+            //         if (result) {
+            //             res.sendStatus(200);
+            //             // send status message success
+            //         } else {
+            //             res.sendStatus(401);
+            //             // throw error message that pw don't match
+            //         }
+            //     });
+            // } else {
+            //     res.sendStatus(400)
+            //     // throw error message that no username
+            // }
         })  
+    },
+    myAccount (req, res) {
+        // db.user.
     }
 };
             
