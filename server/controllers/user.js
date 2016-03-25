@@ -25,20 +25,6 @@ module.exports = {
             res.status(200).send("passwords do not match");
         }
     }
-            
-            // db.user.create({
-            //     isDriver: req.body.userType,
-            //     email: req.body.email,
-            //     phone: req.body.phone,
-            //     address: req.body.address,
-            //     city: req.body.city,
-            //     state: req.body.state,
-            //     zip: req.body.zip,
-            //     password: hash
-            // }).then (function(user) {
-            //     console.log("working");
-            // res.json(user);
-            // })
 
     // loginUser (req, res) {
     //     if (req.body.password === req.body.verify) {

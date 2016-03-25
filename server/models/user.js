@@ -42,6 +42,11 @@ module.exports = function(sequelize, DataTypes) {
         },
         password: {
             type: DataTypes.STRING,
+            set: function(pw) {
+                const salt = bcrypt.genSaltSync(BCRYPT_DIFFICULTY);
+                const hash = bcrypt.hashSync(pw, salt);
+                return this.setDataValue('password', hash);
+             }
         }
     }, {
         timestamps: false,
