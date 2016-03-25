@@ -32,6 +32,7 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+require('./config/passport');
 
 app.use((req, res, next) => {
   res.locals.user = req.user;
