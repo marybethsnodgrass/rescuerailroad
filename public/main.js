@@ -10,6 +10,10 @@ app.config(["$routeProvider", function($routeProvider) {
         templateUrl: 'register/user/userRegister.html',
         controller: 'userRegisterCtrl'
       })
+    .when('/login', {
+        templateUrl: 'login/login.html',
+        controller: 'mainCtrl'
+      })
     .when('/driverRegister', {
         templateUrl: 'register/driver/driverRegister.html',
         controller: 'driverRegisterCtrl'

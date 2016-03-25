@@ -7,7 +7,6 @@ const db = require('../models/');
 module.exports = {
     createUser (req, res) {
         if (req.body.password === req.body.verify) {
-            console.log("pw = verify");
             db.user.findOrCreate({where: {email: req.body.email}, defaults: {
                 userType: req.body.userType,
                 email: req.body.email,
@@ -24,37 +23,28 @@ module.exports = {
         } else {
             res.status(200).send("passwords do not match");
         }
+    },
+    loginUser (req, res) {
+        db.user.findOne({where: {email: req.body.email}}).then((user) => {
+            if (user) {
+                const hash = user.dataValues.password;
+                const pw = req.body.password;
+                bcrypt.compare(pw, hash, function(err, result) {
+                    if (err) throw err;
+                    if (result) {
+                        res.sendStatus(200);
+                        // send status message success
+                    } else {
+                        res.sendStatus(401);
+                        // throw error message that pw don't match
+                    }
+                });
+            } else {
+                res.sendStatus(400)
+                // throw error message that no username
+            }
+        })  
     }
-
-    // loginUser (req, res) {
-    //     if (req.body.password === req.body.verify) {
-    //         db.user.findOne({email: req.body.email}, (err, user) => {
-    //             if (err) throw err;
-    //             if (user) {
-    //                 const hash = db.user.get(hash);
-    //                 const password = req.body.password;
-    //                 bcrypt.compare(password, hash, function(err, res) {
-    //                  // res == true, redirect to my acct    
-    //                 });
-    //                 bcrypt.compare(password, hash, function(err, res) {
-    //                 // res == false, error message that pw don't match
-    //                 });
-    //             } else {
-    //                 // throw error message that no username
-    //             }
-    //         })
-    //     }
-    // }
 };
-
-
-        // const password = req.body.password;
-        // bcrypt.genSalt(10, (err, salt) => {
-        //     bcrypt.hash(password, salt, (err, hash) => {
-        //         hash = password;
-        //         return hash;
-        //     });
-        // }, () => {
-
             
         

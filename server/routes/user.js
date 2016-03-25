@@ -11,5 +11,6 @@ const cb =
 
 router
 .post('/user', ctrl.createUser)
+.post('/login', ctrl.loginUser)
 
 module.exports = router;
