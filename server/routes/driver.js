@@ -8,5 +8,6 @@ const ctrl = require('../controllers/driver');
 
 router
   .post('/driver', ctrl.create)
+  .post('/driverLogin', ctrl.login)
 
 module.exports = router;

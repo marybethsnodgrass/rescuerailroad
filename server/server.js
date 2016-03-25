@@ -7,6 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
+const flash = require('connect-flash');
 
 const db = require('./models/');
 
@@ -16,12 +17,21 @@ const animal = require('./routes/animal');
 
 const app = express();
 const port = process.env.PORT || 3000;
+const SESSION_SECRET = process.env.SESSION_SECRET || 'secret';
 
 app.use(express.static('public'))
-
 app.use(bodyParser.json());
-
 app.use(methodOverride('_method'));
+app.use(session({
+  secret: SESSION_SECRET,
+  store: new RedisStore(),
+  saveUninitialized: true,
+  resave: true
+}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.get('/', (req, res) => {
   res.send('Server Running');

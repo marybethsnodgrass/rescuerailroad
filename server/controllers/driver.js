@@ -28,5 +28,13 @@ module.exports = {
         }).then ((driver) => {
         res.redirect(`/create/${driver.driverid}`);
         });
+    },
+    login (req, res) {
+        passport.authenticate('local', {
+            failureFlash: 'Incorrect email or password',
+            failureRedirect: '/login',
+            successFlash: 'Success!',
+            successRedirect: '/'
+        });
     }
-};
+}
