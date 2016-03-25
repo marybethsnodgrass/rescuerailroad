@@ -4,11 +4,11 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 
-const Auth = require('../models/auth');
-const ctrl = require('../controllers/auth');
+const driver = require('../models/driver');
+const driverCtrl = require('../controllers/driver');
 
 
-router.post('/auth', passport.authenticate('local'), ctrl.loginUser);
-router.delete('/auth', ctrl.logout);
+// router.post('/auth', passport.authenticate('local'), driverCtrl.authenticate);
+// router.delete('/auth', ctrl.logout);
 
 module.exports = router;

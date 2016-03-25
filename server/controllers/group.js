@@ -1,4 +1,6 @@
 'use strict';
+const bcrypt = require('bcrypt');
+const BCRYPT_DIFFICULTY = 11;
 
 const db = require('../models/');
 
@@ -12,7 +14,8 @@ module.exports = {
             address: req.body.address,
             city: req.body.city,
             state: req.body.state,
-            zip: req.body.zip
+            zip: req.body.zip,
+            password: req.body.password
         }).then (function(group) {
         res.json(group);
         res.redirect(`/create/${group.groupID}`);

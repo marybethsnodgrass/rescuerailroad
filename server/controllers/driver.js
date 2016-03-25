@@ -1,11 +1,17 @@
 'use strict';
+const bcrypt = require('bcrypt');
+const BCRYPT_DIFFICULTY = 11;
 
 const db = require('../models/');
 
 module.exports = {
 
     create (req, res) {
-        console.log("req.body,", req.body);
+        bcrypt.genSalt(BCRYPT_DIFFICULTY, function(err, salt) {
+            bcrypt.hash(req.password, salt, function(err, hash) {
+            // Store hash in your password DB.
+            });
+        }),
         db.driver.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -17,20 +23,10 @@ module.exports = {
             zip: req.body.zip,
             dlState: req.body.dlState,
             dlNum: req.body.dlNum,
-            sponsorID: req.body.sponsorID
+            sponsorID: req.body.sponsorID,
+            password: req.body.password
         }).then ((driver) => {
         res.redirect(`/create/${driver.driverid}`);
-        });
-    },
-
-    show (req, res) {
-        res.json({driver: req.driver});
-    },
-
-    showAll (req, res) {
-        db.driver.showAll({})
-        .then((driver)=>{
-        res.json(driver)
         });
     }
 };

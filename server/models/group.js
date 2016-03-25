@@ -17,20 +17,23 @@ module.exports = function(sequelize, DataTypes) {
         notNull: true
     },
     address: {
-       type: DataTypes.STRING,   
+       type: DataTypes.STRING   
     },
     city: {
-       type: DataTypes.STRING,   
+       type: DataTypes.STRING ,
        notNull: true
     },
     state: {
-       type: DataTypes.STRING(2),   
+       type: DataTypes.STRING(2), 
        notNull: true
     },
     zip: {
        type: DataTypes.STRING(5),   
        notNull: true
     },
+    password: {
+            type: DataTypes.STRING
+    }
 }, {
     timestamps: false,
     classMethods: {

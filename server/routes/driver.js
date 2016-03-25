@@ -8,7 +8,5 @@ const ctrl = require('../controllers/driver');
 
 router
   .post('/driver', ctrl.create)
-  .get('/driver', ctrl.showAll)
-  .get('/driver/:id', ctrl.show)
 
 module.exports = router;
