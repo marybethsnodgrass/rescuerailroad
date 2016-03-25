@@ -5,44 +5,47 @@ const BCRYPT_DIFFICULTY = 11;
 
 module.exports = function(sequelize, DataTypes) {
 
-    const driver = sequelize.define('driver', {
+    const user = sequelize.define('user', {
         _id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             notNull: true
         },
-        firstname: {
-            type:DataTypes.STRING,
+        email:{
+            type: DataTypes.STRING, 
+            isEmail: true ,
             notNull: true
         },
-        lastname: {
-            type:DataTypes.STRING,
+        phone: {
+            type: DataTypes.STRING(10),
             notNull: true
         },
-        dlState: {
-            type: DataTypes.STRING(2),   
-        },
-        dlNum: {
+        address: {
             type: DataTypes.STRING,   
         },
-        sponsorID: {
+        city: {
+            type: DataTypes.STRING,   
+            notNull: true
+        },
+        state: {
+            type: DataTypes.STRING(2),   
+            notNull: true
+        },
+        zip: {
+           type: DataTypes.STRING(5),   
+            notNull: true
+        },
+        password: {
             type: DataTypes.STRING,
         }
     }, {
         timestamps: false,
         classMethods: {
             associate: function(models) {
-                driver.hasOne(models.group);
+                // user.hasOne(models.group);
             }
         }
     });
-    return driver;
+    return user;
 };
-
-
-
-// bcrypt.genSalt(BCRYPT_DIFFICULTY, (err, salt) => {
-//             bcrypt.hash(req.password, salt, (err, hash) => {
-            // Store hash in your password DB.
-            // });

@@ -8,8 +8,6 @@ const Group = require('../models/group');
 const ctrl = require('../controllers/group');
 
 router
-  .post('/group', ctrl.create)
-  .get('/group', ctrl.showAll)
-  .get('/group/:id', ctrl.show)
+  .post('/group', ctrl.createGroup)
 
 module.exports = router;

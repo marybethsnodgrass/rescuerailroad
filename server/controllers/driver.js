@@ -5,36 +5,35 @@ const BCRYPT_DIFFICULTY = 11;
 const db = require('../models/');
 
 module.exports = {
-
-    create (req, res) {
-        bcrypt.genSalt(BCRYPT_DIFFICULTY, function(err, salt) {
-            bcrypt.hash(req.password, salt, function(err, hash) {
-            // Store hash in your password DB.
+    createDriver (req, res) {
+        if (req.body.password === req.body.verify) {
+            db.driver.findOne({email: req.body.email}, (err, user) => {
+                if (err) throw err;
+                if (user) {
+                    res.redirect('/login');
+                } else {
+                    db.driver.create(req.body, (err) => {
+                        if (err) throw err;
+                        res.redirect('/login');
+                    }); 
+                }
             });
-        }),
+        } else {
+            res.redirect('/register'), {
+                email: req.body.email,
+                message: 'Passwords do not match'
+            };
+        }
+    },
+    createDriver2 (req, res) {
         db.driver.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
-            email: req.body.email,
-            phone: req.body.phone,
-            address: req.body.address,
-            city: req.body.city,
-            state: req.body.state,
-            zip: req.body.zip,
             dlState: req.body.dlState,
             dlNum: req.body.dlNum,
             sponsorID: req.body.sponsorID,
-            password: req.body.password
         }).then ((driver) => {
-        res.redirect(`/create/${driver.driverid}`);
-        });
-    },
-    login (req, res) {
-        passport.authenticate('local', {
-            failureFlash: 'Incorrect email or password',
-            failureRedirect: '/login',
-            successFlash: 'Success!',
-            successRedirect: '/'
+        res.redirect('/login');
         });
     }
 }

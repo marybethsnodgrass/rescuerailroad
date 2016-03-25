@@ -14,6 +14,7 @@ const db = require('./models/');
 const group = require('./routes/group');
 const driver = require('./routes/driver');
 const animal = require('./routes/animal');
+const user = require('./routes/user');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -32,6 +33,15 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+  res.locals.user = req.user;
+  next();
+});
+
+app.use((req, res, next) => {
+  res.locals.messages = req.flash();
+  next();
+});
 
 app.get('/', (req, res) => {
   res.send('Server Running');
@@ -41,6 +51,7 @@ app.get('/', (req, res) => {
 app.use(group);
 app.use(driver);
 app.use(animal);
+app.use(user);
 
 db.sequelize.sync().then(() => {
   console.log("seqeulize.sync()");

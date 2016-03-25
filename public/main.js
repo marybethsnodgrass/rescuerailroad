@@ -6,9 +6,9 @@ const app = angular.module('rescueRRApp', [
 
 app.config(["$routeProvider", function($routeProvider) {
     $routeProvider
-    .when('/register', {
-        templateUrl: 'mainCtrlViews/userType.html',
-        controller: 'mainCtrl'
+    .when('/userRegister', {
+        templateUrl: 'register/user/userRegister.html',
+        controller: 'userRegisterCtrl'
       })
     .when('/driverRegister', {
         templateUrl: 'register/driver/driverRegister.html',

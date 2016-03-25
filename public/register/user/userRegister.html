@@ -1,0 +1,18 @@
+<div class="container" ng-controller="userRegisterCtrl">
+<navbar-directive></navbar-directive> 
+<h1>User Registration</h1>
+<form>
+    <span> I am a :
+    <input type="radio" group="userType" name="driver">Driver</input>
+    <input type="radio" group="userType" name="group">Group</input>
+    <input type="text" name="email" placeholder="Email">
+    <input type="text" name="phone" placeholder="Phone">
+    <input type="text" name="address" placeholder="Address">
+    <input type="text" name="city" placeholder="City">
+    <input type="text" name="state" placeholder="State">
+    <input type="text" name="zip" placeholder="Zip">
+    <input type="text" ng-model="password" name="password" placeholder="Password">
+    <input type="text" ng-model="verify" name="verify" placeholder="Verify Password">
+    <input type="submit">
+</form>
+</div>
