@@ -18,6 +18,7 @@ module.exports = {
                 password: db.user.generateHashPass(req.body.password)}})
             .spread(function(user, created) {
                 res.json(user);
+                // req.logIn(user);
                 console.log(created);
             })
         } else {

@@ -1,5 +1,5 @@
 
-  app.controller('groupRegisterCtrl', ["$scope", "$timeout", "$location", function ($scope, $timeout, $location) {
+  app.controller('groupRegisterCtrl', ["$scope", "$timeout", "$location", "$http", function ($scope, $timeout, $location, $http) {
     $scope.groupname = '';
     let newGroup = {};
 
@@ -8,11 +8,14 @@
         newGroup = {
             groupname: $scope.groupname
         };
-        $http.post('/group', JSON.stringify(newGroup)).
-            then( function successCallback(response, data) {
-        }),  function errorCallback(response) {
-            console.log("there was an error")
-        }
+        $http.post('/group', JSON.stringify(newGroup))
+        .success(function (data, status, headers) {
+             console.log(status);
+             $location.path('/home');
+        })
+        .error(function (data, status, header) {
+            console.log(status);
+        });
         newGroup = {};
     };
 }]);

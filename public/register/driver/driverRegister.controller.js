@@ -16,11 +16,14 @@
             dlNum: $scope.dlNum,
             sponsorID: $scope.sponsorID
         };
-        $http.post('/driver', JSON.stringify(newDriver)).
-            then( function(response, data) {
-        }),  function(response) {
-            console.log("there was an error")
-        }
+        $http.post('/driver', JSON.stringify(newDriver))
+        .success(function (data, status, headers) {
+             console.log(status);
+             $location.path('/home');
+        })
+        .error(function (data, status, header) {
+            console.log(status);
+        });
         newDriver = {};
     };
 
