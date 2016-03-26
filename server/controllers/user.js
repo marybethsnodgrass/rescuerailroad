@@ -31,16 +31,16 @@ module.exports = {
         })  
     },
     myAccount (req, res) {
-        db.user.findOne({where: {email: req.user.dataValues.email}})
+        db.user.findOne({where: {_id: req.user.dataValues._id}})
         .then((user) => {
             res.json(user);
         })
     },
     updatePhone (req, res) {
-        db.user.update({ where: {email: req.user.dataValues.email}, fields: {
+        db.user.update({phone: phone}, { where: {_id: req.user.dataValues._id}, fields: {
             phone: req.body.newPhone}})
         .then((user) => {
-            res.json(user)
+            res.json(user);
         })
     }
 };

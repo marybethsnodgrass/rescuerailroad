@@ -10,7 +10,7 @@
     $scope.newZip = '';
     let phone = '';
 
-    $http.get('/user/:userId')
+    $http.get('/user/myaccount')
     .success(function(user) {
         $scope.userData = user;
         console.log(user);
@@ -18,17 +18,17 @@
         console.log("there was an error")
     });
 
-    // $scope.updatePhone = function () {
-    //     phone = $scope.newPhone;
-    //     console.log("phone", phone);
-    //     $http.put('/user/:userId', phone)
-    //     .then( function (response, data) {
-    //         console.log("phone number was updated to ", phone);
-    //     }),  function(response) {
-    //         console.log("there was an error")
-    //     }
-    //     $scope.userData.phone = $scope.newPhone;
-    //     $scope.newPhone = '';
-    // };
+    $scope.updatePhone = function () {
+        phone = $scope.newPhone;
+        console.log("phone", phone);
+        $http.put('/user/myaccount/phone', phone)
+        .then( function (response, data) {
+            console.log("phone number was updated to ", phone);
+        }),  function(response) {
+            console.log("there was an error")
+        }
+        $scope.userData.phone = $scope.newPhone;
+        $scope.newPhone = '';
+    };
 
 }]);
