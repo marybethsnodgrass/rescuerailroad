@@ -12,6 +12,7 @@ const cb =
 router
 .post('/user/create', ctrl.createUser)
 .post('/user/login',passport.authenticate('local'), ctrl.loginUser)
-.get('/user/myaccount', ctrl.myAccount)
+.get('/user/:userId', ctrl.myAccount)
+.put('/user/:userId', ctrl.updatePhone)
 
 module.exports = router;

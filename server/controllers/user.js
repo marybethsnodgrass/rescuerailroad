@@ -35,6 +35,13 @@ module.exports = {
         .then((user) => {
             res.json(user);
         })
+    },
+    updatePhone (req, res) {
+        db.user.update({ where: {email: req.user.dataValues.email}, fields: {
+            phone: req.body.newPhone}})
+        .then((user) => {
+            res.json(user)
+        })
     }
 };
             

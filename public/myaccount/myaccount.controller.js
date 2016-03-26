@@ -2,25 +2,33 @@
   'use strict';
   app.controller('myaccountCtrl', ["$scope", "$timeout", "$location", "$http", function ($scope, $timeout, $location, $http) {
     $scope.userData = {};
-    $scope.userType = '';
-    $scope.email = '';
-    $scope.phone = '';
-    $scope.address = '';
-    $scope.city = '';
-    $scope.state = '';
-    $scope.zip = '';
-    $scope.firstname = '';
-    $scope.lastname = '';
-    $scope.dlState = '';
-    $scope.dlNum = '';
-    $scope.sponsorID = '';
+    $scope.newEmail = '';
+    $scope.newPhone = '';
+    $scope.newAddress = '';
+    $scope.newCity = '';
+    $scope.newState = '';
+    $scope.newZip = '';
+    let phone = '';
 
-    $http.get('/user/myaccount')
+    $http.get('/user/:userId')
     .success(function(user) {
         $scope.userData = user;
         console.log(user);
     }).error(function() {
         console.log("there was an error")
     });
+
+    // $scope.updatePhone = function () {
+    //     phone = $scope.newPhone;
+    //     console.log("phone", phone);
+    //     $http.put('/user/:userId', phone)
+    //     .then( function (response, data) {
+    //         console.log("phone number was updated to ", phone);
+    //     }),  function(response) {
+    //         console.log("there was an error")
+    //     }
+    //     $scope.userData.phone = $scope.newPhone;
+    //     $scope.newPhone = '';
+    // };
 
 }]);

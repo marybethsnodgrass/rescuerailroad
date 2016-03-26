@@ -31,10 +31,13 @@ body {
   padding-right: 5px;
   margin-bottom: 0px; }
 
+.lineHeight33 {
+  line-height: 33px; }
+
 input {
   display: block; }
 
-.vertAlignCenter {
+.vertAlignMiddle {
   vertical-align: middle; }
 
 /*# sourceMappingURL=main.css.map */
