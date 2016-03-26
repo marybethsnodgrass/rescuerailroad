@@ -8,6 +8,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const flash = require('connect-flash');
+const io = require('socket.io')()
 
 const db = require('./models/');
 
@@ -27,8 +28,19 @@ app.use(session({
   secret: SESSION_SECRET,
   store: new RedisStore(),
   saveUninitialized: true,
-  resave: true
+  resave: true,
+  httpOnly: true
 }));
+var sessionMiddleware = session({
+  resave: true,
+  saveUninitialized: true,
+  httpOnly: true,
+  genid: function(req) {
+     return uuid.v1() // I used another module to create a uuid
+  },
+  secret: 'random secret here',
+  cookieName: 'session', // if you dont name it here it defaults to connectsid
+});
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());

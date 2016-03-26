@@ -22,7 +22,19 @@ body {
 
   .navbar-fixed-top .navbar-brand {
     padding: 15px 0; } }
+.updateAcctData {
+  display: inline-block;
+  padding: 5px; }
+
+.myAcctLabel {
+  padding-left: 20px;
+  padding-right: 5px;
+  margin-bottom: 0px; }
+
 input {
   display: block; }
+
+.vertAlignCenter {
+  vertical-align: middle; }
 
 /*# sourceMappingURL=main.css.map */

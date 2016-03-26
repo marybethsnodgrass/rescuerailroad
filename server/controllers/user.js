@@ -28,27 +28,13 @@ module.exports = {
         db.user.findOne({where: {email: req.body.email}})
         .then((user) => {
             res.send(user);
-            // if (user) {
-            //     const hash = user.dataValues.password;
-            //     const pw = req.body.password;
-            //     bcrypt.compare(pw, hash, function(err, result) {
-            //         if (err) throw err;
-            //         if (result) {
-            //             res.sendStatus(200);
-            //             // send status message success
-            //         } else {
-            //             res.sendStatus(401);
-            //             // throw error message that pw don't match
-            //         }
-            //     });
-            // } else {
-            //     res.sendStatus(400)
-            //     // throw error message that no username
-            // }
         })  
     },
     myAccount (req, res) {
-        // db.user.
+        db.user.findOne({where: {email: req.user.dataValues.email}})
+        .then((user) => {
+            res.json(user);
+        })
     }
 };
             

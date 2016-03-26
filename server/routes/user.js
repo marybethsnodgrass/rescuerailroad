@@ -12,6 +12,6 @@ const cb =
 router
 .post('/user/create', ctrl.createUser)
 .post('/user/login',passport.authenticate('local'), ctrl.loginUser)
-.get('/user', ctrl.myAccount)
+.get('/user/myaccount', ctrl.myAccount)
 
 module.exports = router;

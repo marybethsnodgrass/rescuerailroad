@@ -10,8 +10,8 @@ passport.serializeUser(function(user, done) {
     done(null, user.email);
 });
 
-passport.deserializeUser(function(id, done) {
-    db.user.findOne({where: {email: id}}).then(function(user){
+passport.deserializeUser(function(email, done) {
+    db.user.findOne({where: {email: email}}).then(function(user){
         done(null, user);
     }).catch(function(err){
         done(err, null);

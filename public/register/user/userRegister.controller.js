@@ -25,8 +25,8 @@
             verify: $scope.verify
         };
         $http.post('/user/create', JSON.stringify(newUser))
-            .then( function (response, data) {
-                $location.path('/home');
+        .then( function (response, data) {
+            $location.path('/home');
         }),  function(response) {
             console.log("there was an error")
         }
