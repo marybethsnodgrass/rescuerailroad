@@ -7,10 +7,12 @@ const db = require('../models/');
 module.exports = {
 
     createGroup (req, res) {
-        db.group.create({
-            groupname: req.body.groupname,
-        }).then (function(group) {
-        res.json(group);
-        });
+        db.group.findOrCreate({where: {groupName: req.body.groupName}, defaults: {
+            groupName: req.body.groupName,
+            userId: req.user.dataValues._id}})
+        .spread(function(group, created) {
+            res.json(group);
+            console.log(created);
+        })
     }
 };

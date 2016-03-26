@@ -6,12 +6,16 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true
+        },
+        groupName:{
+            type: DataTypes.STRING, 
+            notNull: true
         }
     }, {
         timestamps: false,
         classMethods: {
           associate: function(models) {
-            group.hasOne(models.user);
+            group.belongsTo(models.user);
           }
         }
     });

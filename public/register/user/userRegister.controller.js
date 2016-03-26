@@ -25,11 +25,20 @@
             verify: $scope.verify
         };
         $http.post('/user/create', JSON.stringify(newUser))
-        .then( function (response, data) {
-            $location.path('/home');
-        }),  function(response) {
-            console.log("there was an error")
-        }
+            .success(function (data, status, headers) {
+                console.log(status);
+                console.log("$scope.userType", $scope.userType);
+                if ($scope.userType === 'group') {
+                    $location.path('/groupRegister');
+                } if ($scope.userType === 'driver') {
+                    $location.path('/driverRegister');
+                } else {
+                    $location.path('/home');
+                }
+              })
+            .error(function (data, status, header) {
+                console.log(status);
+              });
         newUser = {};
     };
 }]);

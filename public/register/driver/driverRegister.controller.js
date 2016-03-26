@@ -17,8 +17,8 @@
             sponsorID: $scope.sponsorID
         };
         $http.post('/driver', JSON.stringify(newDriver)).
-            then( function successCallback(response, data) {
-        }),  function errorCallback(response) {
+            then( function(response, data) {
+        }),  function(response) {
             console.log("there was an error")
         }
         newDriver = {};
