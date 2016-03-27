@@ -1,12 +1,12 @@
 
   app.controller('groupRegisterCtrl', ["$scope", "$timeout", "$location", "$http", function ($scope, $timeout, $location, $http) {
-    $scope.groupname = '';
+    $scope.groupName = '';
     let newGroup = {};
 
     // create a new driver locally save it remotely
     $scope.createGroup = function () {
         newGroup = {
-            groupname: $scope.groupname
+            groupName: $scope.groupName
         };
         $http.post('/group', JSON.stringify(newGroup))
         .success(function (data, status, headers) {

@@ -1,0 +1,27 @@
+<div class="container" ng-controller="animalPostCtrl">
+<navbar-directive></navbar-directive> 
+<h1>Dog Post</h1>
+<form>
+    <input type="text" ng-model="animalName" placeholder="animalName">
+    <input type="text" ng-model="animalExternalId" placeholder="Animal ID given by shelter/group">
+    <input type="text" ng-model="destGroupName" placeholder="Destination Group Name">
+        <!--     search -->
+    <span> Animal Type: </span>
+    <input type="radio" ng-model="animalType" group="animalType" value="dog">Dog</input>
+    <input type="radio" ng-model="animalType" group="animalType" value="cat">Cat</input>
+    <input type="text" ng-model="weight" placeholder="Animal Weight">
+    <input type="text" ng-model="gender" placeholder="Animal Gender">
+        <!--     change to radio button -->
+<!--     <label>Animal Size</label>
+    <select id = "animalSize">
+       <option value = "xsmall">Extra-small (Chihuahua, Yorkie, etc.)</option>
+       <option value = "small">Small(Dachshund, Cocker Spaniel, etc.)</option>
+       <option value = "medium">Medium(Hound, Beagle, etc.)</option>
+       <option value = "large">Large(Golden Retriever, Lab, Pit Bull, etc.)</option>
+       <option value = "xl">Extra-Large(Great Dane, Mastiff etc.)</option>
+     </select> -->
+    <input type="textbox" ng-model="breed" placeholder="Animal Breed">
+    <input type="text" ng-model="age" placeholder="Animal Age">
+    <input type="submit" ng-click="createAnimalPost()">
+</form>
+</div>

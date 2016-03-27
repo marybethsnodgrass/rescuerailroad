@@ -2,18 +2,26 @@
 
 module.exports = function(sequelize, DataTypes) {
     const animal = sequelize.define('animal', {
-        animalRouteID: {
+        _id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            notNull: true
         },
-        shelterID: DataTypes.INTEGER
-        }, {
+        animalExternalId : {
+            type: DataTypes.INTEGER,
+            notNull: true
+        }
+        // originDriver: {
+        //     type: DataTypes.INTEGER
+        //     // foreign key
+        // }
+    }, {
         timestamps: false,
         classMethods: {
             associate: function(models) {
-                animal.hasMany(models.group);
-                animal.hasMany(models.user);
+                animal.belongsTo(models.groupDestInfo);
+                animal.belongsTo(models.groupOriginInfo);
             }
         }
     });

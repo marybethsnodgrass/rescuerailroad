@@ -46,6 +46,8 @@ module.exports = function(sequelize, DataTypes) {
         classMethods: {
             generateHashPass: function (password, done) {
                 return bcrypt.hashSync(password, bcrypt.genSaltSync(11), null);
+            },
+            associate: function(models) {
             }
         },
         instanceMethods: {

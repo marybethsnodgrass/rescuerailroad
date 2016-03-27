@@ -7,9 +7,7 @@ const Animal = require('../models/animal');
 const ctrl = require('../controllers/animal');
 
 router
-  .post('/animal', ctrl.create)
-  .get('/animal', ctrl.showAll)
-  .get('/animal/:id', ctrl.show)
+  .post('/animal', ctrl.createAnimalPost)
 
 module.exports = router;
 
