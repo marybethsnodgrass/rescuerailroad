@@ -5,12 +5,20 @@ const db = require('../models/');
 module.exports = {
 
     createAnimalPost (req, res) {
-        db.animal.create({
-            shelterID: req.body.shelterID,
-            destination: req.body.destination
-        }).then ((animal) => {
+        db.animal.findOrCreate({where: 
+            {animalExternalId: req.body.animalExternalId},
+            //add groupOriginId to where
+             defaults: {
+            animalName: req.body.animalName,
+            animalExternalId: req.body.animalExternalId,
+            destGroupName: req.body.destGroupName,
+            animalType: req.body.animalType,
+            weight: req.body.weight,
+            gender: req.body.gender,
+            breed: req.body.breed,
+            age: req.body.age}})
+        .then ((animal) => {
         res.json(animal);
-        res.redirect(`/create/${animal.animalRouteID}`);
         });
     },
 };

@@ -1,44 +1,36 @@
 'use strict';
   app.controller('animalPostCtrl', ["$scope", "$http", "$timeout", "$location", function ($scope, $http, $timeout, $location) {
-    $scope.userType = '';
-    $scope.email = '';
-    $scope.phone = '';
-    $scope.address = '';
-    $scope.city = '';
-    $scope.state = '';
-    $scope.zip = '';
-    $scope.password = '';
-    $scope.verify = '';
-    let newUser = {};
+    $scope.animalName = '';
+    $scope.animalExternalId = '';
+    $scope.destGroupName = '';
+    $scope.animalType = '';
+    $scope.weight = '';
+    $scope.gender = '';
+    $scope.breed = '';
+    $scope.age = '';
+
+    let newAnimal = {};
  
     // create a new user locally save it remotely
-    $scope.createUser = function () {
-        newUser = {
-            userType: $scope.userType,
-            email: $scope.email,
-            phone: $scope.phone,
-            address: $scope.address,
-            city: $scope.city,
-            state: $scope.state,
-            zip: $scope.zip,
-            password: $scope.password,
-            verify: $scope.verify
+    $scope.createAnimalPost = function () {
+        newAnimal = {
+            animalName: $scope.animalName,
+            animalExternalId: $scope.animalExternalId,
+            destGroupName: $scope.destGroupName,
+            animalType: $scope.animalType,
+            weight: $scope.weight,
+            gender: $scope.gender,
+            breed: $scope.breed,
+            age: $scope.age
         };
-        $http.post('/user/create', JSON.stringify(newUser))
+        $http.post('/animal', JSON.stringify(newAnimal))
             .success(function (data, status, headers) {
                 console.log(status);
-                console.log("$scope.userType", $scope.userType);
-                if ($scope.userType === 'group') {
-                    $location.path('/groupRegister');
-                } if ($scope.userType === 'driver') {
-                    $location.path('/driverRegister');
-                } else {
-                    $location.path('/home');
-                }
+                console.log(`created animal with name ${$scope.animalName}`);
               })
             .error(function (data, status, header) {
                 console.log(status);
               });
-        newUser = {};
+        newAnimal = {};
     };
 }]);

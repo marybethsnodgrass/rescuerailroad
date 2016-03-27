@@ -27,7 +27,7 @@ app.config(["$routeProvider", function($routeProvider) {
         controller: 'groupRegisterCtrl'
       })
     .when('/animalPost', {
-        templateUrl: 'animal/animal.html',
+        templateUrl: 'post/animal.html',
         controller: 'animalPostCtrl'
       })
     .when('/about', {

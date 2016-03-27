@@ -5,7 +5,7 @@
     <input type="text" ng-model="animalName" placeholder="animalName">
     <input type="text" ng-model="animalExternalId" placeholder="Animal ID given by shelter/group">
     <input type="text" ng-model="destGroupName" placeholder="Destination Group Name">
-        <!--     search -->
+        <!--     search through ng-repeat-->
     <span> Animal Type: </span>
     <input type="radio" ng-model="animalType" group="animalType" value="dog">Dog</input>
     <input type="radio" ng-model="animalType" group="animalType" value="cat">Cat</input>
@@ -21,7 +21,9 @@
        <option value = "xl">Extra-Large(Great Dane, Mastiff etc.)</option>
      </select> -->
     <input type="textbox" ng-model="breed" placeholder="Animal Breed">
-    <input type="text" ng-model="age" placeholder="Animal Age">
+    <input type="text" ng-model="age" placeholder="Estimated Animal Age in Years (if puppy/kitten, enter 0)">
+<!--     figure out how to store baby age data (months vs. years for all other dogs) -->
+    <!--     if puppy, enter in months -->
     <input type="submit" ng-click="createAnimalPost()">
 </form>
 </div>
