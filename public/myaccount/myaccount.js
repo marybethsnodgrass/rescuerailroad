@@ -10,7 +10,7 @@
     $scope.newZip = '';
     let phone = '';
 
-    $http.get('/user/myaccount')
+    $http.get('/user/:id')
     .success(function(user) {
         $scope.userData = user;
         console.log(user);
@@ -21,7 +21,7 @@
     $scope.updatePhone = function () {
         phone = $scope.newPhone;
         console.log("phone", phone);
-        $http.put('/user/myaccount/phone', phone)
+        $http.put('/user/:id', phone)
         .then( function (response, data) {
             console.log("phone number was updated to ", phone);
         }),  function(response) {

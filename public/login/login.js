@@ -10,7 +10,7 @@
             email: $scope.email,
             password: $scope.password
         };
-        $http.post('/user/login', JSON.stringify(newLogin))
+        $http.post('/user/:_id', JSON.stringify(newLogin))
             .then( function(response, data) {
                 $location.path('/home');
         }),  function(response) {

@@ -1,0 +1,23 @@
+<div class="container" ng-controller="groupDirCtrl">
+    <navbar-directive></navbar-directive> 
+    <h1>Group Directory</h1>
+    <div class="panel panel-default">
+    <!-- Default panel contents -->
+        <div class="panel-heading">Participating Shelter and Rescue Groups</div>
+        <!-- Table -->
+        <table class="table">
+            <tr>
+                <th>Group Name</th>
+                <th>City</th> 
+                <th>State</th>
+                <th>Zip</th>
+            </tr>
+            <tr ng-repeat="data in groupData">
+                <td ng-bind="data.groupName"></td>
+                <td ng-bind="data.user.city"></td> 
+                <td ng-bind="data.user.state"></td>
+                <td ng-bind="data.user.zip"></td>
+            </tr>
+        </table>
+    </div>
+</div>

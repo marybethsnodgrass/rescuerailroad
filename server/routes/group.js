@@ -8,5 +8,6 @@ const ctrl = require('../controllers/group');
 
 router
   .post('/group', ctrl.createGroup)
+  .get('/group', ctrl.groupDir)
 
 module.exports = router;

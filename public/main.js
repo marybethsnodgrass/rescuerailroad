@@ -30,6 +30,10 @@ app.config(["$routeProvider", function($routeProvider) {
         templateUrl: 'post/animal.html',
         controller: 'animalPostCtrl'
       })
+    .when('/groupDirectory', {
+        templateUrl: 'groupdirectory/groupDir.html',
+        controller: 'groupDirCtrl'
+      })
     .when('/about', {
         templateUrl: 'mainCtrlViews/about.html',
         controller: 'mainCtrl'

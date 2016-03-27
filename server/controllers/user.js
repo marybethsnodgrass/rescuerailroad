@@ -15,11 +15,13 @@ module.exports = {
                 city: req.body.city,
                 state: req.body.state,
                 zip: req.body.zip,
-                password: db.user.generateHashPass(req.body.password)}})
+                password: db.user.generateHashPass(req.body.password)}
+            })
             .spread(function(user, created) {
                 res.json(user);
                 // req.logIn(user);
                 console.log(created);
+                req.params._id = req.user.dataValues._id;
             })
         } else {
             res.status(200).send("passwords do not match");
@@ -32,17 +34,21 @@ module.exports = {
         })  
     },
     myAccount (req, res) {
+        console.log("req.params", req.params);
         db.user.findOne({where: {_id: req.user.dataValues._id}})
         .then((user) => {
             res.json(user);
         })
     },
     updatePhone (req, res) {
-        db.user.update({phone: phone}, { where: {_id: req.user.dataValues._id}, fields: {
-            phone: req.body.newPhone}})
-        .then((user) => {
-            res.json(user);
-        })
+        console.log(req.user.dataValues._id);
+        console.log(req.params._id);
+        // req.user.dataValues._id = req.params._id;
+        // db.user.update({phone: phone}, { where: {_id: req.user.dataValues._id}, fields: {
+        //     phone: req.body.newPhone}})
+        // .then((user) => {
+        //     res.json(user);
+        // })
     }
 };
             

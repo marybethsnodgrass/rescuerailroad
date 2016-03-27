@@ -16,9 +16,18 @@ module.exports = {
             weight: req.body.weight,
             gender: req.body.gender,
             breed: req.body.breed,
-            age: req.body.age}})
+            age: req.body.age}
+        })
         .then ((animal) => {
         res.json(animal);
         });
     },
+
+    getAnimal (req, res) {
+    
+    },
+
+    getAnimals (req, res) {
+    
+    }
 };

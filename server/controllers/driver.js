@@ -12,7 +12,8 @@ module.exports = {
             dlState: req.body.dlState,
             dlNum: req.body.dlNum,
             userId: req.user.dataValues._id,
-            sponsorID: req.body.sponsorID}})
+            sponsorID: req.body.sponsorID}
+        })
         .spread(function(driver, created) {
             res.json(driver);
             console.log(created);
