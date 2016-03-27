@@ -1,7 +1,7 @@
 'use strict';
 
 const app = angular.module('rescueRRApp', [
-  'ngRoute'
+  'ngRoute', 'angular-toArrayFilter'
 ]);
 
 app.config(["$routeProvider", function($routeProvider) {
