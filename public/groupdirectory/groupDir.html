@@ -13,7 +13,7 @@
                 <th>State</th>
                 <th>Zip</th>
             </tr>
-            <tr ng-repeat="data in groupData | toArray:false | filter:search">
+            <tr ng-repeat="data in groupData | toArray:false | filter:{ groupName: search}">
                 <td ng-bind="data.groupName"></td>
                 <td ng-bind="data.user.city"></td> 
                 <td ng-bind="data.user.state"></td>
