@@ -11,23 +11,24 @@ module.exports = {
              defaults: {
             animalName: req.body.animalName,
             animalExternalId: req.body.animalExternalId,
-            destGroupName: req.body.destGroupName,
             animalType: req.body.animalType,
             weight: req.body.weight,
             gender: req.body.gender,
             breed: req.body.breed,
-            age: req.body.age}
-        })
+            age: req.body.age,
+            destGroupName: req.body.destGroupName,
+        }})
         .then ((animal) => {
         res.json(animal);
         });
     },
 
-    getAnimal (req, res) {
-    
-    },
-
     getAnimals (req, res) {
-    
+        db.animal.findAll({ where: {}, 
+            // include: [db.groupDestInfo]
+        })
+        .then((animal) => {
+            res.json(animal);
+        }) 
     }
 };

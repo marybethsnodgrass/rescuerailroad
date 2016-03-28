@@ -9,7 +9,6 @@ const ctrl = require('../controllers/animal');
 router
     .post('/animal', ctrl.createAnimalPost)
     .get('/animal', ctrl.getAnimals)
-    .get('/animal/:id',ctrl.getAnimal)
 
 module.exports = router;
 

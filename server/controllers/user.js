@@ -34,11 +34,17 @@ module.exports = {
         })  
     },
     myAccount (req, res) {
-        console.log("req.params", req.params);
-        db.user.findOne({where: {_id: req.user.dataValues._id}})
-        .then((user) => {
-            res.json(user);
-        })
+        if (req.user.dataValues.userType === 'driver') {
+            db.driver.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
+            .then((driver) => {
+            res.json(driver);
+            })
+        } else {
+            db.group.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
+            .then((group) => {
+            res.json(group);
+            })
+        }
     },
     updatePhone (req, res) {
         console.log(req.user.dataValues._id);
@@ -52,4 +58,3 @@ module.exports = {
     }
 };
             
-        

@@ -32,5 +32,5 @@ module.exports = {
         .then((group) => {
             res.json(group);
         }) 
-    },
+    }
 };

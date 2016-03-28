@@ -1,22 +1,30 @@
 <div class="container" ng-controller="animalSearchCtrl">
     <navbar-directive></navbar-directive> 
     <h1>Animal Search</h1>
-    <!-- <div class="panel panel-default">
-        <div class="panel-heading">Participating Shelter and Rescue Groups: Search by city, state, or group name.</div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Search Animals</div>
         <input type="text" class="form-control" ng-model="search">
         <table class="table">
             <tr>
-                <th>Group Name</th>
-                <th>City</th> 
-                <th>State</th>
-                <th>Zip</th>
+                <th>Animal Name</th>
+                <th>Animal ID</th> 
+                <th>Animal Type</th>
+                <th>Weight</th>
+                <th>Gender</th>
+                <th>Breed</th>
+                <th>Age</th>
+                <th>Destination Group</th>
             </tr>
-            <tr ng-repeat="data in groupData | toArray:false | filter:search">
-                <td ng-bind="data.groupName"></td>
-                <td ng-bind="data.user.city"></td> 
-                <td ng-bind="data.user.state"></td>
-                <td ng-bind="data.user.zip"></td>
+            <tr ng-repeat="data in animalData | toArray:false | filter:search">
+                <td ng-bind="data.animalName"></td>
+                <td ng-bind="data.animalExternalId"></td> 
+                <td ng-bind="data.animalType"></td>
+                <td ng-bind="data.weight"></td>
+                <td ng-bind="data.gender"></td>
+                <td ng-bind="data.breed"></td>
+                <td ng-bind="data.age"></td>
+                <td ng-bind="data.groupDestInfo.zip"></td>
             </tr>
         </table>
-    </div> -->
+    </div>
 </div>

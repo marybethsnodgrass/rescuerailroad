@@ -42,6 +42,14 @@ app.config(["$routeProvider", function($routeProvider) {
         templateUrl: 'myaccount/myaccount.html',
         controller: 'myaccountCtrl'
       })
+    .when('/myaccountdriver', {
+        templateUrl: 'myaccount/myaccountdriver.html',
+        controller: 'myaccountCtrl'
+      })
+    .when('/myaccountgroup', {
+        templateUrl: 'myaccount/myaccountgroup.html',
+        controller: 'myaccountCtrl'
+      })
     .when('/userRegister', {
         templateUrl: 'register/user/userRegister.html',
         controller: 'userRegisterCtrl'

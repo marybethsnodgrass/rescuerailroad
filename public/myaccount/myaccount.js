@@ -13,7 +13,17 @@
     $http.get('/user/:id')
     .success(function(user) {
         $scope.userData = user;
-        console.log(user);
+        console.log("$scope.userData.user", $scope.userData.user);
+        if ($scope.userData.user.userType === 'driver') {
+            $location.path('/myaccountdriver');
+            //doesn't work for driver
+        }
+        if ($scope.userData.user.userType === 'group') {
+            $location.path('/myaccountgroup');
+            //but works for group...
+        } else {
+            $location.path('/myaccount');
+        }
     }).error(function() {
         console.log("there was an error")
     });

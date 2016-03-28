@@ -1,0 +1,87 @@
+<div class="container" ng-controller="myaccountCtrl">
+    <navbar-directive></navbar-directive> 
+    <h1>My Account</h1>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Phone: </label>
+            <span class="vertAlignMiddle" ng-bind="userData.user.phone"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update phone number</label>
+            <input type="text" class="updateAcctData" ng-model="newPhone">
+            <input type="submit" class="updateAcctData" ng-click="updatePhone()">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Address: </label>
+            <span class="vertAlignMiddle" ng-bind="userData.user.address"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update address</label>
+            <input type="text" class="updateAcctData">
+            <input type="submit" class="updateAcctData">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">City: </label>
+            <span class="vertAlignMiddle" ng-bind="userData.user.city"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update city</label>
+            <input type="text" class="updateAcctData">
+            <input type="submit" class="updateAcctData">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">State: </label>
+            <span class="vertAlignMiddle" ng-bind="userData.user.state"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update state</label>
+            <input type="text" class="updateAcctData">
+            <input type="submit" class="updateAcctData">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Zip Code: </label>
+            <span class="vertAlignMiddle" ng-bind="userData.user.zip"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update zip code</label>
+            <input type="text" class="updateAcctData">
+            <input type="submit" class="updateAcctData">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Email: </label>
+            <span class="vertAlignMiddle" class="vertAlignMiddle" ng-bind="userData.user.email"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update email address</label>
+            <input type="text" class="updateAcctData" ng-model="newEmail">
+            <input type="submit" class="updateAcctData">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">User Account Type: </label>
+            <span class="vertAlignMiddle" ng-bind="userData.user.userType"></span>
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Group Name: </label>
+            <span class="vertAlignMiddle" class="vertAlignMiddle" ng-bind="userData.groupName"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update group name</label>
+            <input type="text" class="updateAcctData" ng-model="newGroupName">
+            <input type="submit" class="updateAcctData">
+        </div>
+    </div>
+</div>
