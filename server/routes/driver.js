@@ -7,6 +7,6 @@ const Driver = require('../models/driver');
 const ctrl = require('../controllers/driver');
 
 router
-  .post('/driver', ctrl.createDriver)
+.post('/driver', ctrl.createDriver)
 
 module.exports = router;

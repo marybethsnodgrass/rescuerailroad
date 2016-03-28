@@ -7,7 +7,7 @@ const Group = require('../models/group');
 const ctrl = require('../controllers/group');
 
 router
-  .post('/group', ctrl.createGroup)
-  .get('/group', ctrl.groupDir)
+.post('/group', ctrl.createGroup)
+.get('/group', ctrl.groupDir)
 
 module.exports = router;

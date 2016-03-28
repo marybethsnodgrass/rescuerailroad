@@ -11,7 +11,7 @@
 
     let newAnimal = {};
  
-    // create a new user locally save it remotely
+    // create a new animal post and locally save it remotely
     $scope.createAnimalPost = function () {
         newAnimal = {
             animalName: $scope.animalName,

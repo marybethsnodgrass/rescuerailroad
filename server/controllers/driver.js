@@ -1,6 +1,4 @@
 'use strict';
-const bcrypt = require('bcrypt');
-const BCRYPT_DIFFICULTY = 11;
 
 const db = require('../models/');
 

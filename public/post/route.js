@@ -1,27 +1,31 @@
 'use strict';
   app.controller('routePostCtrl', ["$scope", "$http", "$timeout", "$location", function ($scope, $http, $timeout, $location) {
-    // $scope.animalName = '';
-    // $scope.animalExternalId = '';
-    // $scope.destGroupName = '';
-    // $scope.animalType = '';
-    // $scope.weight = '';
-    // $scope.gender = '';
-    // $scope.breed = '';
-    // $scope.age = '';
+    $scope.originCity = '';
+    $scope.originState = '';
+    $scope.originZip = '';
+    $scope.originDate = '';
+    $scope.originTime = '';
+    $scope.destCity = '';
+    $scope.destState = '';
+    $scope.destZip = '';
+    $scope.destDate = '';
+    $scope.destTime = '';
 
     let newRoute = {};
  
-    // create a new user locally save it remotely
-    $scope.createAnimalPost = function () {
+    // only works after i delete table and restart node..
+    $scope.createRoutePost = function () {
         newRoute = {
-            // animalName: $scope.animalName,
-            // animalExternalId: $scope.animalExternalId,
-            // destGroupName: $scope.destGroupName,
-            // animalType: $scope.animalType,
-            // weight: $scope.weight,
-            // gender: $scope.gender,
-            // breed: $scope.breed,
-            // age: $scope.age
+            originCity: $scope.originCity,
+            originState: $scope.originState,
+            originZip: $scope.originZip,
+            originDate: $scope.originDate,
+            originTime: $scope.originTime,
+            destCity: $scope.destCity,
+            destState: $scope.destState,
+            destZip: $scope.destZip,
+            destDate: $scope.destDate,
+            destTime: $scope.destTime
         };
         $http.post('/route', JSON.stringify(newRoute))
             .success(function (data, status, headers) {

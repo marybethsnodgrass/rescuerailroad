@@ -15,6 +15,7 @@ const db = require('./models/');
 const group = require('./routes/group');
 const driver = require('./routes/driver');
 const animal = require('./routes/animal');
+const route = require('./routes/route');
 const user = require('./routes/user');
 
 const app = express();
@@ -64,6 +65,7 @@ app.get('/', (req, res) => {
 app.use(group);
 app.use(driver);
 app.use(animal);
+app.use(route);
 app.use(user);
 
 db.sequelize.sync().then(() => {

@@ -14,10 +14,6 @@ app.config(["$routeProvider", function($routeProvider) {
         templateUrl: 'mainCtrlViews/home.html',
         controller: 'mainCtrl'
       })
-    .when('/animalPost', {
-        templateUrl: 'post/animal.html',
-        controller: 'animalPostCtrl'
-      })
     .when('/routePost', {
         templateUrl: 'post/route.html',
         controller: 'routePostCtrl'
@@ -25,6 +21,10 @@ app.config(["$routeProvider", function($routeProvider) {
     .when('/routeSearch', {
         templateUrl: 'search/route.html',
         controller: 'routeSearchCtrl'
+      })
+    .when('/animalPost', {
+        templateUrl: 'post/animal.html',
+        controller: 'animalPostCtrl'
       })
     .when('/animalSearch', {
         templateUrl: 'search/animal.html',
