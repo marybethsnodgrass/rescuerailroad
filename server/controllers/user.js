@@ -32,9 +32,15 @@ module.exports = {
             res.send(user);
         })  
     },
+    logout (req, res) {
+        req.session.regenerate(err => {
+            if (err) throw err;
+            res.redirect('/#/home')
+        })  
+    },
     myAccount (req, res) {
         if (req.user.dataValues.userType === 'driver') {
-            db.driver.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
+                db.driver.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
             .then((driver) => {
             res.json(driver);
             })

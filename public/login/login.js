@@ -12,7 +12,7 @@
         };
         $http.post('/user/:_id', JSON.stringify(newLogin))
             .then( function(response, data) {
-                $location.path('/home');
+                $location.path('/myaccount');
         }),  function(response) {
             console.log("there was an error")
         }

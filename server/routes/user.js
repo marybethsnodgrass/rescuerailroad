@@ -9,6 +9,7 @@ const ctrl = require('../controllers/user');
 
 router
 .post('/user/create', ctrl.createUser)
+.get('/user/logout', ctrl.logout)
 .post('/user/:id',passport.authenticate('local'), ctrl.loginUser)
 .get('/user/:id', ctrl.myAccount)
 .put('/user/:id', ctrl.updatePhone)

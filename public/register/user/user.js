@@ -28,13 +28,14 @@
             .success(function (data, status, headers) {
                 console.log(status);
                 console.log("$scope.userType", $scope.userType);
-                if ($scope.userType === 'group') {
-                    $location.path('/groupRegister');
-                } else if ($scope.userType === 'driver') {
-                    $location.path('/driverRegister');
-                } else {
-                    $location.path('/home');
-                }
+                    $location.path('/login');
+                // if ($scope.userType === 'group') {
+                //     $location.path('/groupRegister');
+                // } else if ($scope.userType === 'driver') {
+                //     $location.path('/driverRegister');
+                // } else {
+                //     $location.path('/home');
+                // }
               })
             .error(function (data, status, header) {
                 console.log(status);

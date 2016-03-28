@@ -5,6 +5,7 @@ const db = require('../models/');
 module.exports = {
 
     createGroup (req, res) {
+        console.log("req.user",req.user)
         db.group.findOrCreate({where: 
             // {userId: req.user.dataValues._id},
             {groupName: req.body.groupName},
