@@ -17,8 +17,7 @@
         if ($scope.userData.user.userType === 'driver') {
             $location.path('/myaccountdriver');
             //doesn't work for driver
-        }
-        if ($scope.userData.user.userType === 'group') {
+        } else if ($scope.userData.user.userType === 'group') {
             $location.path('/myaccountgroup');
             //but works for group...
         } else {

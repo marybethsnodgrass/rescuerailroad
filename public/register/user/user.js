@@ -30,7 +30,7 @@
                 console.log("$scope.userType", $scope.userType);
                 if ($scope.userType === 'group') {
                     $location.path('/groupRegister');
-                } if ($scope.userType === 'driver') {
+                } else if ($scope.userType === 'driver') {
                     $location.path('/driverRegister');
                 } else {
                     $location.path('/home');

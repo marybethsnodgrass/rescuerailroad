@@ -8,7 +8,6 @@ module.exports = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             dlState: req.body.dlState,
-            dlNum: req.body.dlNum,
             userId: req.user.dataValues._id,
             sponsorID: req.body.sponsorID}
         })

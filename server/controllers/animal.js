@@ -10,7 +10,6 @@ module.exports = {
             //add groupOriginId to where
              defaults: {
             animalName: req.body.animalName,
-            animalExternalId: req.body.animalExternalId,
             animalType: req.body.animalType,
             weight: req.body.weight,
             gender: req.body.gender,

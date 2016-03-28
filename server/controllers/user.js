@@ -9,7 +9,6 @@ module.exports = {
         if (req.body.password === req.body.verify) {
             db.user.findOrCreate({where: {email: req.body.email}, defaults: {
                 userType: req.body.userType,
-                email: req.body.email,
                 phone: req.body.phone,
                 address: req.body.address,
                 city: req.body.city,

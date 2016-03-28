@@ -5,8 +5,7 @@ const db = require('../models/');
 module.exports = {
 
     createRoutePost (req, res) {
-        db.route.findOrCreate({where: {},
-            defaults: {
+        db.route.create({
                 originCity: req.body.originCity,
                 originState: req.body.originState,
                 originZip: req.body.originZip,
@@ -18,7 +17,7 @@ module.exports = {
                 destDate: req.body.destDate,
                 destTime: req.body.destTime,
                 //driverId: 
-        }})
+        })
         .then ((route) => {
         res.json(route);
         });
