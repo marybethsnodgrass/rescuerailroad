@@ -3,9 +3,9 @@
     <h1>Group Directory</h1>
     <div class="panel panel-default">
     <!-- Default panel contents -->
-        <div class="panel-heading">Participating Shelter and Rescue Groups</div>
+        <div class="panel-heading">Participating Shelter and Rescue Groups: Search by city, state, or group name.</div>
         <input type="text" class="form-control" ng-model="search">
-        <!-- Table -->
+        <!-- want to add search by closest location in the future -->
         <table class="table">
             <tr>
                 <th>Group Name</th>
@@ -13,7 +13,7 @@
                 <th>State</th>
                 <th>Zip</th>
             </tr>
-            <tr ng-repeat="data in groupData | toArray:false | filter:{ groupName: search}">
+            <tr ng-repeat="data in groupData | toArray:false | filter:search">
                 <td ng-bind="data.groupName"></td>
                 <td ng-bind="data.user.city"></td> 
                 <td ng-bind="data.user.state"></td>
