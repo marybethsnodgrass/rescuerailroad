@@ -1,73 +1,73 @@
 'use strict';
 
 const app = angular.module('rescueRRApp', [
-  'ngRoute', 'angular-toArrayFilter'
+  'ngRoute', 'angular-toArrayFilter', 'http-auth-interceptor', 'ngMap'
 ]);
 
 app.config(["$routeProvider", function($routeProvider) {
     $routeProvider
     .when('/about', {
-        templateUrl: 'mainCtrlViews/about.html',
+        templateUrl: 'ctrlsAndViews/mainCtrlViews/about.html',
         controller: 'mainCtrl'
       })
     .when('/home', {
-        templateUrl: 'mainCtrlViews/home.html',
+        templateUrl: 'ctrlsAndViews/mainCtrlViews/home.html',
         controller: 'mainCtrl'
       })
     .when('/routePost', {
-        templateUrl: 'post/route.html',
+        templateUrl: 'ctrlsAndViews/post/route.html',
         controller: 'routePostCtrl'
       })
     .when('/routeSearch', {
-        templateUrl: 'search/route.html',
+        templateUrl: 'ctrlsAndViews/search/route.html',
         controller: 'routeSearchCtrl'
       })
     .when('/animalPost', {
-        templateUrl: 'post/animal.html',
+        templateUrl: 'ctrlsAndViews/post/animal.html',
         controller: 'animalPostCtrl'
       })
     .when('/animalSearch', {
-        templateUrl: 'search/animal.html',
+        templateUrl: 'ctrlsAndViews/search/animal.html',
         controller: 'animalSearchCtrl'
       })
     .when('/groupDirectory', {
-        templateUrl: 'groupdirectory/groupDir.html',
+        templateUrl: 'ctrlsAndViews/groupdirectory/groupDir.html',
         controller: 'groupDirCtrl'
       })
     .when('/contact', {
-        templateUrl: 'mainCtrlViews/contact.html',
+        templateUrl: 'ctrlsAndViews/mainCtrlViews/contact.html',
         controller: 'mainCtrl'
       })
     .when('/myaccount', {
-        templateUrl: 'myaccount/myaccount.html',
+        templateUrl: 'ctrlsAndViews/myaccount/myaccount.html',
         controller: 'myaccountCtrl'
       })
     .when('/myaccountdriver', {
-        templateUrl: 'myaccount/myaccountdriver.html',
+        templateUrl: 'ctrlsAndViews/myaccount/myaccountdriver.html',
         controller: 'myaccountCtrl'
       })
     .when('/myaccountgroup', {
-        templateUrl: 'myaccount/myaccountgroup.html',
+        templateUrl: 'ctrlsAndViews/myaccount/myaccountgroup.html',
         controller: 'myaccountCtrl'
       })
     .when('/userRegister', {
-        templateUrl: 'register/user/userRegister.html',
+        templateUrl: 'ctrlsAndViews/register/user/userRegister.html',
         controller: 'userRegisterCtrl'
       })
     .when('/driverRegister', {
-        templateUrl: 'register/driver/driverRegister.html',
+        templateUrl: 'ctrlsAndViews/register/driver/driverRegister.html',
         controller: 'driverRegisterCtrl'
       })
     .when('/groupRegister', {
-        templateUrl: 'register/group/groupRegister.html',
+        templateUrl: 'ctrlsAndViews/register/group/groupRegister.html',
         controller: 'groupRegisterCtrl'
       })
     .when('/login', {
-        templateUrl: 'login/login.html',
+        templateUrl: 'ctrlsAndViews/login/login.html',
         controller: 'mainCtrl'
       })
       .otherwise({
-        templateUrl: 'mainCtrlViews/home.html',
+        templateUrl: 'ctrlsAndViews/mainCtrlViews/home.html',
         controller: 'mainCtrl'
       })
 }]);

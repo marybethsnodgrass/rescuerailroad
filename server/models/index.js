@@ -5,7 +5,8 @@ var path      = require('path');
 var basename  = path.basename(module.filename);
 var db        = {};
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('postgres://localhost:5432/rescuerr');
+const DATABASE_URL = process.env.DATABASE_URL || 'postgres://localhost:5432/rescuerr'
+const sequelize = new Sequelize(DATABASE_URL);
 fs
   .readdirSync(__dirname)
   .filter(function(file) {

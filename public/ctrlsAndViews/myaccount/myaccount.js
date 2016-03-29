@@ -1,7 +1,6 @@
 
   'use strict';
   app.controller('myaccountCtrl', ["$scope", "$timeout", "$location", "$http", function ($scope, $timeout, $location, $http) {
-    $scope.userData = {};
     $scope.newEmail = '';
     $scope.newPhone = '';
     $scope.newAddress = '';
@@ -27,9 +26,10 @@
     });
 
     $scope.updatePhone = function () {
-        phone = $scope.newPhone;
+        phone = $scope.newPhone 
+        // || $scope.userData.user.phone;
         console.log("phone", phone);
-        $http.put('/user/:id', phone)
+        $http.put('/user/:id', {phone:phone})
         .then( function (response, data) {
             console.log("phone number was updated to ", phone);
         }),  function(response) {

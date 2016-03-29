@@ -7,6 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
+const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6729'
 const flash = require('connect-flash');
 const io = require('socket.io')()
 
@@ -27,7 +28,9 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 app.use(session({
   secret: SESSION_SECRET,
-  store: new RedisStore(),
+  store: new RedisStore({
+    url:REDIS_URL
+  }),
   saveUninitialized: true,
   resave: true,
   httpOnly: true

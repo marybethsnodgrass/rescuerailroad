@@ -38,6 +38,13 @@ module.exports = {
             res.redirect('/#/home')
         })  
     },
+    checkLogin (req, res) {
+        if (req.user) {
+            res.send(true)
+        } else {
+            res.send(false)
+        } 
+    },
     myAccount (req, res) {
         if (req.user.dataValues.userType === 'driver') {
                 db.driver.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
@@ -52,14 +59,10 @@ module.exports = {
         }
     },
     updatePhone (req, res) {
-        console.log(req.user.dataValues._id);
-        console.log(req.params._id);
-        // req.user.dataValues._id = req.params._id;
-        // db.user.update({phone: phone}, { where: {_id: req.user.dataValues._id}, fields: {
-        //     phone: req.body.newPhone}})
-        // .then((user) => {
-        //     res.json(user);
-        // })
+        db.user.update({phone: req.body.phone}, { where: {_id: req.user.dataValues._id}})
+        .then((user) => {
+            res.json(user);
+        })
     }
 };
             
