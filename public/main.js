@@ -1,7 +1,7 @@
 'use strict';
 
 const app = angular.module('rescueRRApp', [
-  'ngRoute', 'angular-toArrayFilter', 'http-auth-interceptor', 'ngMap'
+  'ngRoute', 'angular-toArrayFilter', 'http-auth-interceptor'
 ]);
 
 app.config(["$routeProvider", function($routeProvider) {
