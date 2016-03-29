@@ -34,16 +34,16 @@ app.use(session({
   resave: true,
   httpOnly: true
 }));
-var sessionMiddleware = session({
-  resave: true,
-  saveUninitialized: true,
-  httpOnly: true,
-  genid: function(req) {
-     return uuid.v1() // I used another module to create a uuid
-  },
-  secret: 'random secret here',
-  cookieName: 'session', // if you dont name it here it defaults to connectsid
-});
+// var sessionMiddleware = session({
+//   resave: true,
+//   saveUninitialized: true,
+//   httpOnly: true,
+//   genid: function(req) {
+//      return uuid.v1() // I used another module to create a uuid
+//   },
+//   secret: 'random secret here',
+//   cookieName: 'session', // if you dont name it here it defaults to connectsid
+// });
 app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport');
