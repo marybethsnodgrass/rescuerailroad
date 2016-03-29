@@ -4,7 +4,9 @@
   "description": "Web application for animal shelters to connect with volunteer drivers in order to transport dogs and cats from high-risk shelters to animal rescue groups. Built on the MEAN stack.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node ./server/server.js",
+    "postinstall" : "bower install"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   "dependencies": {
     "bcrypt": "^0.8.5",
     "body-parser": "^1.15.0",
+    "bower": "^1.7.7",
     "connect-redis": "^3.0.2",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
