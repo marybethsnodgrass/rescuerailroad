@@ -8,7 +8,6 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6729'
-const flash = require('connect-flash');
 const io = require('socket.io')()
 
 const db = require('./models/');
@@ -45,7 +44,6 @@ var sessionMiddleware = session({
   secret: 'random secret here',
   cookieName: 'session', // if you dont name it here it defaults to connectsid
 });
-app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport');
