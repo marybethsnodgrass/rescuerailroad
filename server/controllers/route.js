@@ -24,9 +24,8 @@ module.exports = {
     },
 
     getRoutes (req, res) {
-        db.route.findAll({ where: {}, 
+        db.group.findAll({include: [db.driver, db.user]})
             // include: [db.driver]
-        })
         .then((route) => {
             res.json(route);
         }) 
