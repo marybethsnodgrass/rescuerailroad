@@ -26,7 +26,7 @@
             destState: $scope.destState,
             destZip: $scope.destZip,
             destDate: $scope.destDate,
-            destTime: $scope.destTime
+            destTime: $scope.destTime,
             phone: $scope.phone
         };
         $http.post('/route', JSON.stringify(newRoute))
