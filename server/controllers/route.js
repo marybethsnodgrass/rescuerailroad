@@ -24,7 +24,7 @@ module.exports = {
     },
 
     getRoutes (req, res) {
-        db.group.findAll({
+        db.route.findAll({ where: {}
             // include: [db.driver]
         })
         .then((route) => {
