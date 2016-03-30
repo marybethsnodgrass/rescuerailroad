@@ -16,6 +16,7 @@ module.exports = {
                 destZip: req.body.destZip,
                 destDate: req.body.destDate,
                 destTime: req.body.destTime,
+                phone: req.body.phone,
                 //driverId: 
         })
         .then ((route) => {

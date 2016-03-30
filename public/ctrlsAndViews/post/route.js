@@ -10,6 +10,7 @@
     $scope.destZip = '';
     $scope.destDate = '';
     $scope.destTime = '';
+    $scope.phone = '';
 
     let newRoute = {};
  
@@ -26,6 +27,7 @@
             destZip: $scope.destZip,
             destDate: $scope.destDate,
             destTime: $scope.destTime
+            phone: $scope.phone
         };
         $http.post('/route', JSON.stringify(newRoute))
             .success(function (data, status, headers) {
