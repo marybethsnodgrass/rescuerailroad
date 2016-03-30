@@ -15,7 +15,8 @@ module.exports = {
             gender: req.body.gender,
             breed: req.body.breed,
             age: req.body.age,
-            destGroupName: req.body.destGroupName,
+            destCity: req.body.destCity,
+            destState: req.body.destState,
         }})
         .then ((animal) => {
         res.json(animal);

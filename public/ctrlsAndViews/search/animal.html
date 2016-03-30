@@ -13,7 +13,8 @@
                 <th>Gender</th>
                 <th>Breed</th>
                 <th>Age</th>
-                <th>Destination Group</th>
+                <th>Destination City</th>
+                <th>Destination State</th>
             </tr>
             <tr ng-repeat="data in animalData | toArray:false | filter:search">
                 <td ng-bind="data.animalName"></td>
@@ -23,7 +24,8 @@
                 <td ng-bind="data.gender"></td>
                 <td ng-bind="data.breed"></td>
                 <td ng-bind="data.age"></td>
-                <td ng-bind="data.groupDestInfo.zip"></td>
+                <td ng-bind="data.destCity"></td>
+                <td ng-bind="data.destState"></td>
             </tr>
         </table>
     </div>

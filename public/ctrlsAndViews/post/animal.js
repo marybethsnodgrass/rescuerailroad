@@ -2,7 +2,8 @@
   app.controller('animalPostCtrl', ["$scope", "$http", "$timeout", "$location", function ($scope, $http, $timeout, $location) {
     $scope.animalName = '';
     $scope.animalExternalId = '';
-    $scope.destGroupName = '';
+    $scope.destCity = '';
+    $scope.destState = '';
     $scope.animalType = '';
     $scope.weight = '';
     $scope.gender = '';
@@ -16,7 +17,8 @@
         newAnimal = {
             animalName: $scope.animalName,
             animalExternalId: $scope.animalExternalId,
-            destGroupName: $scope.destGroupName,
+            destCity: $scope.destCity,
+            destState: $scope.destState,
             animalType: $scope.animalType,
             weight: $scope.weight,
             gender: $scope.gender,
