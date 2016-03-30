@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
             isEmail: true ,
             notNull: true
         },
+        
         userType:{
             type: DataTypes.STRING, 
             notNull: true
