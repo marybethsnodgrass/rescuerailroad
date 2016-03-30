@@ -31,6 +31,7 @@
             .success(function (data, status, headers) {
                 console.log(status);
                 console.log("created route");
+                $location.path('/routeSearch');
               })
             .error(function (data, status, header) {
                 console.log(status);
