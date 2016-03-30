@@ -1,22 +1,35 @@
 <div class="container" ng-controller="routeSearchCtrl">
     <navbar-directive></navbar-directive> 
     <h1>Route Search</h1>
-    <!-- <div class="panel panel-default">
-        <div class="panel-heading">Participating Shelter and Rescue Groups: Search by city, state, or group name.</div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Search Routes</div>
         <input type="text" class="form-control" ng-model="search">
         <table class="table">
             <tr>
-                <th>Group Name</th>
-                <th>City</th> 
-                <th>State</th>
-                <th>Zip</th>
+                <th>Origin City</th>
+                <th>Origin State</th> 
+                <th>Origin Zip</th>
+                <th>Origin Date</th>
+                <th>Origin Time</th>
+                <th>Destination City</th>
+                <th>Destination State</th> 
+                <th>Destination Zip</th>
+                <th>Destination Date</th>
+                <th>Destination Time</th>
             </tr>
-            <tr ng-repeat="data in groupData | toArray:false | filter:search">
-                <td ng-bind="data.groupName"></td>
-                <td ng-bind="data.user.city"></td> 
-                <td ng-bind="data.user.state"></td>
-                <td ng-bind="data.user.zip"></td>
+            <tr ng-repeat="data in routeData | toArray:false | filter:search">
+                <td ng-bind="data.originCity"></td>
+                <td ng-bind="data.originState"></td> 
+                <td ng-bind="data.originZip"></td>
+                <td ng-bind="data.originDate"></td>
+                <td ng-bind="data.originTime"></td>
+                <td ng-bind="data.destCity"></td>
+                <td ng-bind="data.destState"></td> 
+                <td ng-bind="data.destZip"></td>
+                <td ng-bind="data.destDate"></td>
+                <td ng-bind="data.destTime"></td>
+
             </tr>
         </table>
-    </div> -->
+    </div>
 </div>
