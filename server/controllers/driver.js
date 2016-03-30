@@ -4,6 +4,7 @@ const db = require('../models/');
 
 module.exports = {
     createDriver (req, res) {
+        console.log("req.user", req.user);
         db.driver.findOrCreate({where: {dlNum: req.body.dlNum}, defaults: {
             firstname: req.body.firstname,
             lastname: req.body.lastname,

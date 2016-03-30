@@ -46,6 +46,7 @@ module.exports = {
         } 
     },
     myAccount (req, res) {
+                console.log("req.user", req.user);
         if (req.user.dataValues.userType === 'driver') {
                 db.driver.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
             .then((driver) => {

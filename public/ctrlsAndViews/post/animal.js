@@ -27,6 +27,7 @@
             .success(function (data, status, headers) {
                 console.log(status);
                 console.log(`created animal with name ${$scope.animalName}`);
+                $location.path('/animalSearch');
               })
             .error(function (data, status, header) {
                 console.log(status);
