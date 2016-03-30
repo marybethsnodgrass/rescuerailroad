@@ -42,7 +42,6 @@ module.exports = function(sequelize, DataTypes) {
         destState : {
             type: DataTypes.STRING
         }
-
     }, {
         timestamps: false,
         classMethods: {
