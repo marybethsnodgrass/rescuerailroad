@@ -46,6 +46,9 @@ module.exports = function(sequelize, DataTypes) {
         destTime : {
             type: DataTypes.STRING
         },
+        phone : {
+            type: DataTypes.INTEGER
+        }
     }, {
         timestamps: false,
         classMethods: {

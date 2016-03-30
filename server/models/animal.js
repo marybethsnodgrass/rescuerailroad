@@ -35,7 +35,14 @@ module.exports = function(sequelize, DataTypes) {
         },
         age : {
             type: DataTypes.INTEGER
+        },
+        destCity : {
+            type: DataTypes.STRING
+        },
+        destState : {
+            type: DataTypes.STRING
         }
+
     }, {
         timestamps: false,
         classMethods: {
