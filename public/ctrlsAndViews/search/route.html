@@ -16,7 +16,7 @@
                 <th>Destination Zip</th>
                 <th>Destination Date</th>
                 <th>Destination Time</th>
-                <th>Driver First Name</th>
+<!--                 <th>Driver First Name</th> -->
             </tr>
             <tr ng-repeat="data in routeData | toArray:false | filter:search">
                 <td ng-bind="data.originCity"></td>
@@ -29,7 +29,7 @@
                 <td ng-bind="data.destZip"></td>
                 <td ng-bind="data.destDate"></td>
                 <td ng-bind="data.destTime"></td>
-                <td ng-bind="data.driver.firstName"></td>
+<!--                 <td ng-bind="data.driver.firstName"></td> -->
             </tr>
         </table>
     </div>
