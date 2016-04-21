@@ -7,7 +7,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
-const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6729'
+const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379'
 const io = require('socket.io')()
 
 const db = require('./models/');

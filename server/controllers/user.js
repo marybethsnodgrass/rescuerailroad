@@ -18,9 +18,7 @@ module.exports = {
             })
             .spread(function(user, created) {
                 res.json(user);
-                // req.logIn(user);
                 console.log(created);
-                req.params._id = req.user.dataValues._id;
             })
         } else {
             res.status(200).send("passwords do not match");
@@ -46,7 +44,6 @@ module.exports = {
         } 
     },
     myAccount (req, res) {
-                console.log("req.user", req.user);
         if (req.user.dataValues.userType === 'driver') {
                 db.driver.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
             .then((driver) => {

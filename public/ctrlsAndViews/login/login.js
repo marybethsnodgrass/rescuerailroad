@@ -10,13 +10,14 @@
             email: $scope.email,
             password: $scope.password
         };
-        $http.post('/user/:_id', JSON.stringify(newLogin))
-            .then( function(response, data) {
+        $http.post('/user/:id', JSON.stringify(newLogin))
+            .success( function (data, status, header) {
                 // authService.loginConfirmed()
                 $location.path('/myaccount');
-        }),  function(response) {
-            console.log("there was an error")
-        }
+            })
+            .error(function (data, status, header) {
+                console.log(status);
+            });
         newLogin = {};
     };
 }]);
