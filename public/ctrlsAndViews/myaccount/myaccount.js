@@ -8,6 +8,10 @@
     $scope.newZip = '';
     $scope.newEmail = '';
     $scope.newGroupName = '';
+    $scope.newFirstName = '';
+    $scope.newLastName = '';
+    $scope.newDlState = '';
+    $scope.newDlNum = '';
     let phone = '';
     let newUserData = {};
 
@@ -29,17 +33,38 @@
 
     $scope.updateAcctData = function () {
         console.log("$scope.userData", $scope.userData);
-        newUserData = {
-            phone:$scope.newPhone || $scope.userData.user.phone,
-            address: $scope.newAddress || $scope.userData.user.address,
-            city: $scope.newCity || $scope.userData.user.city,
-            state: $scope.newState || $scope.userData.user.state,
-            zip: $scope.newZip || $scope.userData.user.zip,
-            email: $scope.newEmail || $scope.userData.user.email,
-            groupName: $scope.newGroupName || $scope.userData.user.groupName
+        if ($location.path('/myaccountgroup')) {
+            newUserData = {
+                groupName: $scope.newGroupName || $scope.userData.user.groupName,
+                user: {
+                    _id: $scope.userData.user._id,
+                    phone:$scope.newPhone || $scope.userData.user.phone,
+                    address: $scope.newAddress || $scope.userData.user.address,
+                    city: $scope.newCity || $scope.userData.user.city,
+                    state: $scope.newState || $scope.userData.user.state,
+                    zip: $scope.newZip || $scope.userData.user.zip,
+                    email: $scope.newEmail || $scope.userData.user.email,
+                    password: $scope.userData.user.password,
+                    userType: $scope.userData.user.userType
+                }
+            }
+        } else if ($location.path('/myaccountdriver')) {
+            newUserData = {
+                phone:$scope.newPhone || $scope.userData.user.phone,
+                address: $scope.newAddress || $scope.userData.user.address,
+                city: $scope.newCity || $scope.userData.user.city,
+                state: $scope.newState || $scope.userData.user.state,
+                zip: $scope.newZip || $scope.userData.user.zip,
+                email: $scope.newEmail || $scope.userData.user.email,
+                firstName: $scope.newFirstName || $scope.userData.user.firstName,
+                lastName: $scope.newLastName || $scope.userData.user.lastName,
+                dlState: $scope.newDlState || $scope.userData.user.dlState,
+                dlNum: $scope.newDlNum || $scope.userData.user.dlNum
+            }
+        } else {
+            console.log("error");
         }
         console.log("newUserData", newUserData);
-
 
         // $http.put('/user/:id', {phone:phone})
         // .then( function (response, data) {
