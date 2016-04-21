@@ -35,7 +35,9 @@
         console.log("$scope.userData", $scope.userData);
         if ($location.path('/myaccountgroup')) {
             newUserData = {
-                groupName: $scope.newGroupName || $scope.userData.user.groupName,
+                _id: $scope.userData._id,
+                userId: $scope.userData.userId,
+                groupName: $scope.newGroupName || $scope.userData.groupName,
                 user: {
                     _id: $scope.userData.user._id,
                     phone:$scope.newPhone || $scope.userData.user.phone,
