@@ -12,7 +12,6 @@
     $scope.newLastName = '';
     $scope.newDlState = '';
     $scope.newDlNum = '';
-    let phone = '';
     let newUserData = {};
 
     $http.get('/user/:id')
@@ -36,8 +35,8 @@
         if ($location.path('/myaccountgroup')) {
             newUserData = {
                 _id: $scope.userData._id,
-                userId: $scope.userData.userId,
                 groupName: $scope.newGroupName || $scope.userData.groupName,
+                userId: $scope.userData.userId,
                 user: {
                     _id: $scope.userData.user._id,
                     phone:$scope.newPhone || $scope.userData.user.phone,
@@ -52,16 +51,19 @@
             }
         } else if ($location.path('/myaccountdriver')) {
             newUserData = {
-                phone:$scope.newPhone || $scope.userData.user.phone,
-                address: $scope.newAddress || $scope.userData.user.address,
-                city: $scope.newCity || $scope.userData.user.city,
-                state: $scope.newState || $scope.userData.user.state,
-                zip: $scope.newZip || $scope.userData.user.zip,
-                email: $scope.newEmail || $scope.userData.user.email,
-                firstName: $scope.newFirstName || $scope.userData.user.firstName,
-                lastName: $scope.newLastName || $scope.userData.user.lastName,
-                dlState: $scope.newDlState || $scope.userData.user.dlState,
-                dlNum: $scope.newDlNum || $scope.userData.user.dlNum
+                _id: $scope.userData._id,
+                firstName: $scope.newFirstName || $scope.userData.firstName,
+                lastName: $scope.newLastName || $scope.userData.lastName,
+                dlState: $scope.newDlState || $scope.userData.dlState,
+                dlNum: $scope.newDlNum || $scope.userData.dlNum,
+                user: {
+                    phone:$scope.newPhone || $scope.userData.user.phone,
+                    address: $scope.newAddress || $scope.userData.user.address,
+                    city: $scope.newCity || $scope.userData.user.city,
+                    state: $scope.newState || $scope.userData.user.state,
+                    zip: $scope.newZip || $scope.userData.user.zip,
+                    email: $scope.newEmail || $scope.userData.user.email
+                }
             }
         } else {
             console.log("error");
