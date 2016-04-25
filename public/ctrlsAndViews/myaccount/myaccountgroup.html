@@ -18,7 +18,7 @@
         </div>
         <div class="col-sm-7">
             <label class="myAcctLabel">Update address</label>
-            <input type="text" class="updateAcctData">
+            <input type="text" class="updateAcctData" ng-model="newAddress">
         </div>
     </div>
     <div class="row">
@@ -28,7 +28,7 @@
         </div>
         <div class="col-sm-7">
             <label class="myAcctLabel">Update city</label>
-            <input type="text" class="updateAcctData">
+            <input type="text" class="updateAcctData" ng-model="newCity">
         </div>
     </div>
     <div class="row">
@@ -38,7 +38,7 @@
         </div>
         <div class="col-sm-7">
             <label class="myAcctLabel">Update state</label>
-            <input type="text" class="updateAcctData">
+            <input type="text" class="updateAcctData" ng-model="newState">
         </div>
     </div>
     <div class="row">
@@ -48,7 +48,7 @@
         </div>
         <div class="col-sm-7">
             <label class="myAcctLabel">Update zip code</label>
-            <input type="text" class="updateAcctData">
+            <input type="text" class="updateAcctData" ng-model="newZip">
         </div>
     </div>
     <div class="row">
@@ -74,8 +74,8 @@
         </div>
         <div class="col-sm-7">
             <label class="myAcctLabel">Update group name</label>
-            <input type="text" class="updateAcctData" ng-model="newGroupName">
+            <input type="text" class="updateGroupAcctData" ng-model="newGroupName">
         </div>
-        <input type="submit" class="updateAcctData" ng-click="updateAcctData()">
+        <input type="submit" class="updateGroupAcctData" ng-click="updateGroupAcctData()">
     </div>
 </div>
