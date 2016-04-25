@@ -22,7 +22,7 @@
         } else if ($scope.userData.user.userType === 'driver') {
             $location.path('/myaccountdriver');
         } else if ($scope.userData.user.userType === 'group') {
-            $location.path('/myaccountgroup');
+            $location.path('/myaccountgroupuserinfo');
         } else {
             $location.path('/myaccount');
         }
@@ -48,9 +48,15 @@
                 userType: $scope.userData.user.userType
             }
         }
-        console.log("$scope.newAddress", $scope.newAddress);
-        console.log("$scope.userData.user.address", $scope.userData.user.address);
         console.log("newUserData", newUserData);
+        $http.put('/user/:id', JSON.stringify(newUserData))
+        .success(function (data, status, headers) {
+             console.log(status);
+             $location.path('/myaccountgroup');
+        })
+        .error(function (data, status, header) {
+            console.log(status);
+        });
         newUserData = {};
     };
     $scope.updateDriverAcctData = function () {
@@ -71,17 +77,14 @@
             }
         }
         console.log("newUserData", newUserData);
+        $http.put('/user/:id', JSON.stringify(newUserData))
+        .success(function (data, status, headers) {
+             console.log(status);
+             $location.path('/myaccountdriver');
+        })
+        .error(function (data, status, header) {
+            console.log(status);
+        });
         newUserData = {};
     };
-
-
-        // $http.put('/user/:id', {phone:phone})
-        // .then( function (response, data) {
-        //     console.log("phone number was updated to ", phone);
-        // }),  function(response) {
-        //     console.log("there was an error")
-        // }
-        // $scope.userData.phone = $scope.newPhone;
-        // $scope.newPhone = '';
-
 }]);

@@ -13,7 +13,7 @@ router
 .get('/user/checklogin', ctrl.checkLogin)
 .post('/user/:id',passport.authenticate('local'), ctrl.loginUser)
 .get('/user/:id', ctrl.myAccount)
-.put('/user/:id', ctrl.updatePhone)
+.put('/user/:id', ctrl.updateAcct)
 
 module.exports = router;
 

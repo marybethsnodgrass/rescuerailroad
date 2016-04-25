@@ -46,8 +46,12 @@ app.config(["$routeProvider", function($routeProvider) {
         templateUrl: 'ctrlsAndViews/myaccount/myaccountdriver.html',
         controller: 'myaccountCtrl'
       })
-    .when('/myaccountgroup', {
-        templateUrl: 'ctrlsAndViews/myaccount/myaccountgroup.html',
+    .when('/myaccountgroupuserinfo', {
+        templateUrl: 'ctrlsAndViews/myaccount/myaccountgroupuserinfo.html',
+        controller: 'myaccountCtrl'
+      })
+    .when('/myaccountgroupgroupinfo', {
+        templateUrl: 'ctrlsAndViews/myaccount/myaccountgroupgroupinfo.html',
         controller: 'myaccountCtrl'
       })
     .when('/userRegister', {

@@ -56,7 +56,21 @@ module.exports = {
             })
         }
     },
-    updatePhone (req, res) {
+
+    updateAcct (req, res) {
+        if (req.user.dataValues.userType === 'driver') {
+                db.driver.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
+            .then((driver) => {
+            res.json(driver);
+            })
+        } else {
+            db.group.findOne({where: {userId: req.user.dataValues._id}, include:[db.user]})  
+            .then((group) => {
+            res.json(group);
+            })
+        }
+    },
+    updateAcct (req, res) {
         db.user.update({phone: req.body.phone}, { where: {_id: req.user.dataValues._id}})
         .then((user) => {
             res.json(user);
