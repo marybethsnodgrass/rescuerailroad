@@ -1,0 +1,13 @@
+<div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Group Name: </label>
+            <span class="vertAlignMiddle" class="vertAlignMiddle" ng-bind="userData.groupName"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update group name</label>
+            <input type="text" class="updateGroupAcctData" ng-model="newGroupName">
+        </div>
+    </div>
+    <input type="submit" class="updateAcctData" ng-click="updateGroupData()">
+</div>

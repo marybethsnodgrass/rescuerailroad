@@ -1,0 +1,49 @@
+<div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">User Account Type: </label>
+            <span class="vertAlignMiddle" ng-bind="userData.user.userType"></span>
+        </div>
+        </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">First Name: </label>
+            <span class="vertAlignMiddle" class="vertAlignMiddle" ng-bind="userData.firstname"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update first name</label>
+            <input type="text" class="updateAcctData" ng-model="newFirstName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Last Name: </label>
+            <span class="vertAlignMiddle" class="vertAlignMiddle" ng-bind="userData.lastname"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update last name</label>
+            <input type="text" class="updateAcctData" ng-model="newLastName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Drivers License State: </label>
+            <span class="vertAlignMiddle" class="vertAlignMiddle" ng-bind="userData.dlState"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update drivers license state</label>
+            <input type="text" class="updateAcctData" ng-model="newDlState">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 lineHeight33">
+            <label class="myAcctLabel vertAlignMiddle">Drivers License Number: </label>
+            <span class="vertAlignMiddle" class="vertAlignMiddle" ng-bind="userData.dlNum"></span>
+        </div>
+        <div class="col-sm-7">
+            <label class="myAcctLabel">Update drivers license number</label>
+            <input type="text" class="updateAcctData" ng-model="newDlNum">
+        </div>
+    </div>  
+    <input type="submit" class="updateAcctData" ng-click="updateDriverData()">
+</div>
