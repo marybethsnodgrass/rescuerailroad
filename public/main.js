@@ -1,7 +1,7 @@
 'use strict';
 
 const app = angular.module('rescueRRApp', [
-  'ngRoute', 'angular-toArrayFilter', 'http-auth-interceptor'
+  'ngRoute','angular-toArrayFilter', 'ui.bootstrap'
 ]);
 
 app.config(["$routeProvider", function($routeProvider) {
@@ -46,12 +46,8 @@ app.config(["$routeProvider", function($routeProvider) {
         templateUrl: 'ctrlsAndViews/myaccount/myaccountdriver.html',
         controller: 'myaccountCtrl'
       })
-    .when('/myaccountgroupuserinfo', {
-        templateUrl: 'ctrlsAndViews/myaccount/myaccountgroupuserinfo.html',
-        controller: 'myaccountCtrl'
-      })
-    .when('/myaccountgroupgroupinfo', {
-        templateUrl: 'ctrlsAndViews/myaccount/myaccountgroupgroupinfo.html',
+    .when('/myaccountgroup', {
+        templateUrl: 'ctrlsAndViews/myaccount/myaccountgroup.html',
         controller: 'myaccountCtrl'
       })
     .when('/userRegister', {

@@ -22,7 +22,7 @@
         } else if ($scope.userData.user.userType === 'driver') {
             $location.path('/myaccountdriver');
         } else if ($scope.userData.user.userType === 'group') {
-            $location.path('/myaccountgroupuserinfo');
+            $location.path('/myaccountgroup');
         } else {
             $location.path('/myaccount');
         }
@@ -49,14 +49,14 @@
             }
         }
         console.log("newUserData", newUserData);
-        $http.put('/user/:id', JSON.stringify(newUserData))
-        .success(function (data, status, headers) {
-             console.log(status);
-             $location.path('/myaccountgroup');
-        })
-        .error(function (data, status, header) {
-            console.log(status);
-        });
+        // $http.put('/user/:id', JSON.stringify(newUserData))
+        // .success(function (data, status, headers) {
+        //      console.log(status);
+        //      $location.path('/myaccountgroup');
+        // })
+        // .error(function (data, status, header) {
+        //     console.log(status);
+        // });
         newUserData = {};
     };
     $scope.updateDriverAcctData = function () {
@@ -77,14 +77,14 @@
             }
         }
         console.log("newUserData", newUserData);
-        $http.put('/user/:id', JSON.stringify(newUserData))
-        .success(function (data, status, headers) {
-             console.log(status);
-             $location.path('/myaccountdriver');
-        })
-        .error(function (data, status, header) {
-            console.log(status);
-        });
+        // $http.put('/user/:id', JSON.stringify(newUserData))
+        // .success(function (data, status, headers) {
+        //      console.log(status);
+        //      $location.path('/myaccountdriver');
+        // })
+        // .error(function (data, status, header) {
+        //     console.log(status);
+        // });
         newUserData = {};
     };
 }]);
